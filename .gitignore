@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Large/generated outputs
+data/finished_photos/
+data/new_photos/
+annotations/annotations_output/
+
+# Optional: keep structure files if needed
+# !data/**/.gitkeep
