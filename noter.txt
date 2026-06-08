@@ -1,0 +1,23 @@
+outlier detection
+ransac
+
+Rodriguez rotation
+
+cosine similarity for vinkel
+
+Symmetri
+Forskellige metoder 
+plus minus 
+gange
+
+Andre metoder 
+
+Projekter på flere akser 
+Tjek om der er mange værdier med ca samme symmetri for så er den nok forkert
+Tjek forskellige grader af rotation
+
+segmentation
+
+Læs kode
+
+UI desgin
