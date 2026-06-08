@@ -17,7 +17,7 @@ def log(msg: str) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Fuse head position from 6 views using simple camera-ray triangulation (v1)."
+        description="Fuse head position from 6 views using simple camera-ray triangulation."
     )
     parser.add_argument("--animal", type=str, default=None, help="Species code (e.g. AC). Omit for all.")
     parser.add_argument(
@@ -35,7 +35,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-root",
         type=Path,
-        default=Path("data/new_photos/head_fused_v1"),
+        default=Path("data/new_photos/head_fused"),
         help="Root for fused outputs.",
     )
     parser.add_argument(
@@ -327,7 +327,7 @@ def main() -> None:
             result = {
                 "animal": animal,
                 "individual": individual,
-                "mode": "camera_ray_triangulation_v1_simple",
+                "mode": "camera_ray_triangulation",
                 "camera_fov_deg": args.camera_fov_deg,
                 "used_angles": sorted(list(per_angle.keys())),
                 "estimated_head_xyz_norm": norm_xyz,
@@ -339,7 +339,7 @@ def main() -> None:
                 "per_angle_top1": per_angle,
                 "per_angle_reprojection": reproj,
             }
-            out_json = json_out_dir / "fused_head_v1.json"
+            out_json = json_out_dir / "fused_head.json"
             out_json.write_text(json.dumps(result, indent=2), encoding="utf-8")
 
             for angle, info in per_angle.items():
@@ -350,7 +350,7 @@ def main() -> None:
                 t1 = info["top1_patch"]
                 draw_overlay(
                     query_image=qimg,
-                    out_path=viz_dir / f"{qimg.stem}_{angle}_fused_v1.png",
+                    out_path=viz_dir / f"{qimg.stem}_{angle}_fused.png",
                     pred_nx=float(pred.get("pred_patch_center_x_norm", 0.5)),
                     pred_ny=float(pred.get("pred_patch_center_y_norm", 0.5)),
                     obs_nx=float(t1["patch_center_x_norm"]),
@@ -359,7 +359,7 @@ def main() -> None:
 
             np.save(data_dir / "fused_head_xyz_voxel.npy", np.array(voxel_xyz, dtype=float))
             total += 1
-            log(f"    Saved fused v1 result ({len(per_angle)} angles): {out_json}")
+            log(f"    Saved fused result ({len(per_angle)} angles): {out_json}")
 
     log(f"Done. Fused individuals: {total}")
 

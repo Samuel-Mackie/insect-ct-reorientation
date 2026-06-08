@@ -10,6 +10,7 @@ import numpy as np
 import vedo
 from PIL import Image, ImageDraw, ImageFont
 from scipy import ndimage
+from skimage.filters import threshold_multiotsu
 from vedo import settings
 
 settings.default_backend = "vtk"
@@ -54,20 +55,17 @@ def find_input_volumes(input_root: Path) -> list[Path]:
     return sorted([p for p in input_root.rglob("*.tif") if p.is_file()])
 
 
-def segment_largest_component(volume: np.ndarray, threshold_percentile: float) -> np.ndarray:
-    mask = volume > np.percentile(volume, threshold_percentile)
-    structure = np.ones((3, 3, 3), dtype=bool)
-    mask = ndimage.binary_opening(mask, structure=structure)
-    mask = ndimage.binary_closing(mask, structure=structure)
-    mask = ndimage.binary_fill_holes(mask)
-
+def segment_largest_component(volume: np.ndarray) -> np.ndarray:
+    thresholds = threshold_multiotsu(volume, classes=3)
+    regions = np.digitize(volume, bins=thresholds)
+    mask = regions == 2
     labeled, num = ndimage.label(mask)
-    if num == 0:
-        raise ValueError("No connected components found after thresholding.")
-
-    sizes = ndimage.sum(mask, labeled, index=np.arange(1, num + 1))
+    sizes = ndimage.sum_labels(volume, labeled, index=np.arange(1, num + 1))
     largest = int(np.argmax(sizes) + 1)
-    return labeled == largest
+    mask = labeled == largest
+    mask = ndimage.binary_dilation(mask, iterations=3)
+    mask = ndimage.binary_fill_holes(mask)
+    return mask
 
 
 def render_six_views(clean_volume: np.ndarray, config: CompositeConfig) -> dict[str, Image.Image]:
@@ -192,7 +190,7 @@ def main() -> None:
 
         try:
             data = vedo.load(str(in_path)).tonumpy()
-            mask = segment_largest_component(data, threshold_percentile=cfg.threshold_percentile)
+            mask = segment_largest_component(data)
             clean = np.zeros_like(data)
             clean[mask] = data[mask]
 

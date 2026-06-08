@@ -8,6 +8,7 @@ import numpy as np
 import tifffile
 import vedo
 from scipy import ndimage
+from skimage.filters import threshold_multiotsu
 
 
 def log(msg: str) -> None:
@@ -21,8 +22,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--fused-root",
         type=Path,
-        default=Path("data/new_photos/head_fused_v1"),
-        help="Root containing fused_head_v1.json outputs.",
+        default=Path("data/new_photos/head_fused"),
+        help="Root containing fused_head.json outputs.",
     )
     parser.add_argument(
         "--input-root",
@@ -74,7 +75,7 @@ def discover_individuals(fused_root: Path, animal: str) -> list[str]:
         return []
     out: list[str] = []
     for p in sorted(species_dir.iterdir()):
-        if (p / "json" / "fused_head_v1.json").exists():
+        if (p / "json" / "fused_head.json").exists():
             out.append(p.name)
     return out
 
@@ -90,19 +91,17 @@ def find_original_tif(input_root: Path, animal: str, individual: str) -> Path | 
     return None
 
 
-def segment_largest_component(volume: np.ndarray, threshold_percentile: float) -> np.ndarray:
-    mask = volume > np.percentile(volume, threshold_percentile)
-    structure = np.ones((3, 3, 3), dtype=bool)
-    mask = ndimage.binary_opening(mask, structure=structure)
-    mask = ndimage.binary_closing(mask, structure=structure)
-    mask = ndimage.binary_fill_holes(mask)
-
+def segment_largest_component(volume: np.ndarray) -> np.ndarray:
+    thresholds = threshold_multiotsu(volume, classes=3)
+    regions = np.digitize(volume, bins=thresholds)
+    mask = regions == 2
     labeled, num = ndimage.label(mask)
-    if num == 0:
-        raise ValueError("No connected components found after thresholding.")
-    sizes = ndimage.sum(mask, labeled, index=np.arange(1, num + 1))
+    sizes = ndimage.sum_labels(volume, labeled, index=np.arange(1, num + 1))
     largest = int(np.argmax(sizes) + 1)
-    return labeled == largest
+    mask = labeled == largest
+    mask = ndimage.binary_dilation(mask, iterations=3)
+    mask = ndimage.binary_fill_holes(mask)
+    return mask
 
 
 def rotation_matrix_from_vectors(a: np.ndarray, b: np.ndarray) -> np.ndarray:
@@ -207,7 +206,7 @@ def main() -> None:
     tasks: list[tuple[str, str, Path]] = []
     for animal in animals:
         for individual in discover_individuals(args.fused_root, animal):
-            fused_json = args.fused_root / animal / individual / "json" / "fused_head_v1.json"
+            fused_json = args.fused_root / animal / individual / "json" / "fused_head.json"
             tasks.append((animal, individual, fused_json))
 
     if args.max_files is not None:
@@ -241,7 +240,7 @@ def main() -> None:
 
         try:
             data = vedo.load(str(in_tif)).tonumpy().astype(np.float32)
-            mask = segment_largest_component(data, threshold_percentile=args.threshold_percentile)
+            mask = segment_largest_component(data)
             com_xyz = np.array(ndimage.center_of_mass(mask.astype(np.uint8)), dtype=float)
             head_xyz = load_fused_head_xyz(fused_json=fused_json, volume_shape_xyz=data.shape)
             v_xyz = head_xyz - com_xyz

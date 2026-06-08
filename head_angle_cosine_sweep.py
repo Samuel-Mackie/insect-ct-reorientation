@@ -12,6 +12,7 @@ import torch
 import vedo
 from PIL import Image, ImageDraw
 from scipy import ndimage
+from skimage.filters import threshold_multiotsu
 from transformers import AutoImageProcessor, AutoModel
 from vedo import settings
 from vtkmodules.vtkRenderingCore import vtkCoordinate
@@ -230,19 +231,17 @@ def resolve_inputs(args: argparse.Namespace) -> tuple[str, str, Path, list[float
     return animal, Path(file_name).stem, tif_path, annotation
 
 
-def segment_largest_component(volume: np.ndarray, threshold_percentile: float) -> np.ndarray:
-    mask = volume > np.percentile(volume, threshold_percentile)
-    structure = np.ones((3, 3, 3), dtype=bool)
-    mask = ndimage.binary_opening(mask, structure=structure)
-    mask = ndimage.binary_closing(mask, structure=structure)
-    mask = ndimage.binary_fill_holes(mask)
-
+def segment_largest_component(volume: np.ndarray) -> np.ndarray:
+    thresholds = threshold_multiotsu(volume, classes=3)
+    regions = np.digitize(volume, bins=thresholds)
+    mask = regions == 2
     labeled, num = ndimage.label(mask)
-    if num == 0:
-        raise ValueError("No connected components found after thresholding.")
-    sizes = ndimage.sum(mask, labeled, index=np.arange(1, num + 1))
+    sizes = ndimage.sum_labels(volume, labeled, index=np.arange(1, num + 1))
     largest = int(np.argmax(sizes) + 1)
-    return labeled == largest
+    mask = labeled == largest
+    mask = ndimage.binary_dilation(mask, iterations=3)
+    mask = ndimage.binary_fill_holes(mask)
+    return mask
 
 
 def angle_values(start: float, end: float, step: float) -> list[float]:
@@ -604,7 +603,7 @@ def main() -> None:
 
     log(f"Loading volume: {tif_path}")
     data = vedo.load(str(tif_path)).tonumpy()
-    mask = segment_largest_component(data, threshold_percentile=config.threshold_percentile)
+    mask = segment_largest_component(data)
     clean = np.zeros_like(data)
     clean[mask] = data[mask]
 
