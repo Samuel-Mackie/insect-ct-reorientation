@@ -95,12 +95,12 @@ def segment_largest_component(volume: np.ndarray) -> np.ndarray:
     thresholds = threshold_multiotsu(volume, classes=3)
     regions = np.digitize(volume, bins=thresholds)
     mask = regions == 2
+    mask = ndimage.binary_dilation(mask, iterations=5)
+    mask = ndimage.binary_fill_holes(mask)
     labeled, num = ndimage.label(mask)
     sizes = ndimage.sum_labels(volume, labeled, index=np.arange(1, num + 1))
     largest = int(np.argmax(sizes) + 1)
     mask = labeled == largest
-    mask = ndimage.binary_dilation(mask, iterations=3)
-    mask = ndimage.binary_fill_holes(mask)
     return mask
 
 

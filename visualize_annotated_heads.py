@@ -22,6 +22,8 @@ class RenderConfig:
     threshold_percentile: float = 97.5
     zoom: float = 1.2
     render_size: tuple[int, int] = (980, 980)
+    # Match segment_original_photos so reference and query renders share scale.
+    view_angle_deg: float = 25.0
     patch_size: int = 14
     patch_color: tuple[int, int, int] = (0, 180, 0)
     patch_width: int = 3
@@ -74,12 +76,12 @@ def segment_largest_component(volume: np.ndarray) -> np.ndarray:
     thresholds = threshold_multiotsu(volume, classes=3)
     regions = np.digitize(volume, bins=thresholds)
     mask = regions == 2
+    mask = ndimage.binary_dilation(mask, iterations=5)
+    mask = ndimage.binary_fill_holes(mask)
     labeled, num = ndimage.label(mask)
     sizes = ndimage.sum_labels(volume, labeled, index=np.arange(1, num + 1))
     largest = int(np.argmax(sizes) + 1)
     mask = labeled == largest
-    mask = ndimage.binary_dilation(mask, iterations=3)
-    mask = ndimage.binary_fill_holes(mask)
     return mask
 
 
@@ -163,6 +165,7 @@ def render_with_head_marker(
             cam.SetFocalPoint(*center)
             cam.SetPosition(*(center + direction * distance))
             cam.SetViewUp(*view_up)
+            cam.SetViewAngle(config.view_angle_deg)
             plotter.renderer.ResetCameraClippingRange()
             plotter.render()
 

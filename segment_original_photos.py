@@ -19,6 +19,10 @@ class SegmentationConfig:
     threshold_percentile: float = 97.5
     zoom: float = 1.2
     render_size: tuple[int, int] = (980, 980)
+    # Vertical camera view angle (FOV) explicitly enforced per view so the
+    # perspective is deterministic and recorded for downstream reprojection.
+    # VTK default is 30 deg; zoom=1.2 historically shrank it to 30/1.2 = 25 deg.
+    view_angle_deg: float = 25.0
 
 
 VIEWS = [
@@ -35,12 +39,12 @@ def segment_largest_component(volume: np.ndarray) -> np.ndarray:
     thresholds = threshold_multiotsu(volume, classes=3)
     regions = np.digitize(volume, bins=thresholds)
     mask = regions == 2
+    mask = ndimage.binary_dilation(mask, iterations=5)
+    mask = ndimage.binary_fill_holes(mask)
     labeled, num = ndimage.label(mask)
     sizes = ndimage.sum_labels(volume, labeled, index=np.arange(1, num + 1))
     largest = int(np.argmax(sizes) + 1)
     mask = labeled == largest
-    mask = ndimage.binary_dilation(mask, iterations=3)
-    mask = ndimage.binary_fill_holes(mask)
     return mask
 
 
@@ -67,6 +71,10 @@ def render_views(
             cam.SetFocalPoint(*center)
             cam.SetPosition(*(center + direction * distance))
             cam.SetViewUp(*view_up)
+            # Enforce a fixed view angle so the perspective does not depend on
+            # vedo's zoom (which divides the view angle and can compound across
+            # views as the camera is reused).
+            cam.SetViewAngle(config.view_angle_deg)
             plotter.renderer.ResetCameraClippingRange()
 
             out_path = out_dir / f"{base_name}_{idx}_{label}.png"
@@ -80,6 +88,7 @@ def render_views(
                     "view_up": view_up.astype(float).tolist(),
                     "camera_position": cam_pos,
                     "camera_focal_point": center.astype(float).tolist(),
+                    "view_angle_deg": float(cam.GetViewAngle()),
                     "output_image": str(out_path),
                 }
             )
@@ -90,6 +99,7 @@ def render_views(
         "bounds_xyzxyz": [float(xmin), float(xmax), float(ymin), float(ymax), float(zmin), float(zmax)],
         "volume_center_xyz": center.astype(float).tolist(),
         "camera_distance": float(distance),
+        "view_angle_deg": float(config.view_angle_deg),
         "camera_views": camera_views,
     }
 

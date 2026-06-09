@@ -8,3 +8,19 @@ Pipeline run: 2026-06-08 14:48:04
   segment_sixview_composite               1m 56s   OK
 ============================================================
   TOTAL                                  19m 31s
+Pipeline run: 2026-06-09 12:08:58
+============================================================
+  segment_original_photos                      1m 49s   OK
+  visualize_annotated_heads                    2m 10s   OK
+  top3_head_patches                            5m 41s   OK
+  fuse_head_position                           1m 19s   OK
+  rotate_head_up                               3m 05s   OK
+  segment_sixview_composite                    3m 16s   OK
+============================================================
+  TOTAL                                       17m 24s
+Benchmark run (5 individuals): 2026-06-09 11:48:07
+============================================================
+  top3_head_patches [small]                    3m 31s   OK
+  top3_head_patches [base]                     8m 02s   OK
+============================================================
+  TOTAL                                       11m 33s

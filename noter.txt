@@ -21,3 +21,6 @@ segmentation
 Læs kode
 
 UI desgin
+
+
+brug rays og ransac til at finde hoved
