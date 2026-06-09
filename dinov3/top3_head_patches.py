@@ -34,25 +34,25 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--head-vis-root",
         type=Path,
-        default=Path("data/new_photos/head_visualizations"),
+        default=Path("data/new_photos_dinov3/head_visualizations"),
         help="Root containing head_projection.json per annotated individual.",
     )
     parser.add_argument(
         "--segmented-root",
         type=Path,
-        default=Path("data/new_photos/segmented"),
+        default=Path("data/new_photos_dinov3/segmented"),
         help="Root containing segmented images to score.",
     )
     parser.add_argument(
         "--output-root",
         type=Path,
-        default=Path("data/new_photos/head_top3"),
+        default=Path("data/new_photos_dinov3/head_top3"),
         help="Root output folder.",
     )
     parser.add_argument(
         "--model-name",
         type=str,
-        default="facebook/dinov2-small",
+        default="facebook/dinov3-vits16-pretrain-lvd1689m",
         help="Hugging Face model id.",
     )
     parser.add_argument(
@@ -174,6 +174,7 @@ def extract_patch_tokens(
     processor: AutoImageProcessor,
     model: AutoModel,
     patch_size: int,
+    num_prefix_tokens: int,
     bg_threshold: int,
     fg_patch_ratio: float,
     device: str,
@@ -191,7 +192,9 @@ def extract_patch_tokens(
         )
         inputs = {k: v.to(device) for k, v in inputs.items()}
         outputs = model(**inputs)
-        tokens = outputs.last_hidden_state[:, 1:, :].squeeze(0).detach().cpu().numpy()
+        # DINOv3 sequence is [CLS] + register tokens + patch tokens, so skip the
+        # leading num_prefix_tokens (1 + num_register_tokens) to keep patch tokens only.
+        tokens = outputs.last_hidden_state[:, num_prefix_tokens:, :].squeeze(0).detach().cpu().numpy()
 
     if tokens.shape[0] != gh * gw:
         raise ValueError(f"Patch count mismatch in {image_path}: got {tokens.shape[0]}, expected {gh*gw}")
@@ -299,7 +302,10 @@ def main() -> None:
     model = AutoModel.from_pretrained(args.model_name).to(device)
     model.eval()
     log("Model loaded.")
-    patch_size = int(getattr(model.config, "patch_size", 14))
+    patch_size = int(getattr(model.config, "patch_size", 16))
+    num_register_tokens = int(getattr(model.config, "num_register_tokens", 0))
+    num_prefix_tokens = 1 + num_register_tokens  # CLS + register tokens
+    log(f"patch_size={patch_size} | num_register_tokens={num_register_tokens}")
 
     animals = [args.animal] if args.animal else discover_animals(args.head_vis_root)
     angles = [normalize_angle(args.angle)] if args.angle else list(ANGLE_TO_INDEX.keys())
@@ -332,6 +338,7 @@ def main() -> None:
                         processor,
                         model,
                         patch_size,
+                        num_prefix_tokens,
                         args.bg_threshold,
                         args.fg_patch_ratio,
                         device,
@@ -401,6 +408,7 @@ def main() -> None:
                         processor,
                         model,
                         patch_size,
+                        num_prefix_tokens,
                         args.bg_threshold,
                         args.fg_patch_ratio,
                         device,

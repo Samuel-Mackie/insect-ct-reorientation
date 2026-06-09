@@ -51,25 +51,25 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--head-vis-root",
         type=Path,
-        default=Path("data/new_photos/head_visualizations"),
+        default=Path("data/new_photos_dinov3/head_visualizations"),
         help="Root containing head_projection.json per scan.",
     )
     parser.add_argument(
         "--segmented-root",
         type=Path,
-        default=Path("data/new_photos/segmented"),
+        default=Path("data/new_photos_dinov3/segmented"),
         help="Root containing segmented view images used for DINO tokens.",
     )
     parser.add_argument(
         "--output-root",
         type=Path,
-        default=Path("data/new_photos/cosine_similarity"),
+        default=Path("data/new_photos_dinov3/cosine_similarity"),
         help="Root folder for overlay outputs.",
     )
     parser.add_argument(
         "--model-name",
         type=str,
-        default="facebook/dinov2-small",
+        default="facebook/dinov3-vits16-pretrain-lvd1689m",
         help="Hugging Face DINO model id.",
     )
     parser.add_argument(
@@ -211,7 +211,9 @@ def extract_patch_tokens(
         )
         inputs = {k: v.to(device) for k, v in inputs.items()}
         outputs = model(**inputs)
-        patch_tokens = outputs.last_hidden_state[:, 1:, :].squeeze(0).detach().cpu().numpy()
+        # DINOv3: skip CLS + register tokens (1 + num_register_tokens) to keep patch tokens.
+        num_prefix = 1 + int(getattr(model.config, "num_register_tokens", 0))
+        patch_tokens = outputs.last_hidden_state[:, num_prefix:, :].squeeze(0).detach().cpu().numpy()
 
     expected = grid_h * grid_w
     if patch_tokens.shape[0] != expected:
@@ -516,7 +518,7 @@ def main() -> None:
     model = AutoModel.from_pretrained(args.model_name).to(device)
     model.eval()
 
-    patch_size = int(getattr(model.config, "patch_size", 14))
+    patch_size = int(getattr(model.config, "patch_size", 16))
 
     animals = [args.animal.strip()] if args.animal else discover_animals(args.head_vis_root)
     if args.angle:

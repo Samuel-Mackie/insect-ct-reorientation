@@ -4,7 +4,9 @@ __pycache__/
 
 # Large/generated outputs
 data/finished_photos/
+data/finished_photos_dinov3/
 data/new_photos/
+data/new_photos_dinov3/
 annotations/annotations_output/
 
 # Optional: keep structure files if needed

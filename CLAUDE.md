@@ -34,6 +34,10 @@ python fuse_head_position.py
 # 5. Rotate volumes so head points up (+Y)
 python rotate_head_up.py --overwrite
 
+# 5b. (Optional) Head-up AND roll about Y so the bilateral symmetry plane is canonical.
+#     Add --composite to also save a finished 6-view QA image per volume.
+python rotate_head_up_symmetry.py --overwrite --composite
+
 # 6. Render 6-view composites of rotated volumes
 python segment_sixview_composite.py --input-root data/finished_photos/rotated --output-root data/finished_photos/composite --overwrite
 
@@ -78,7 +82,37 @@ fuse_head_position         →  camera-ray triangulation → fused_head.json
                                (estimated_head_xyz_voxel, confidence, reprojection error)
         ↓
 rotate_head_up             →  affine rotation aligning head→CoM vector to +Y axis
+        ↓
+rotate_head_up_symmetry    →  (optional) head-up + roll about Y so the bilateral
+                               symmetry plane is canonical (see below)
 ```
+
+### Symmetry-axis roll correction (`rotate_head_up_symmetry.py`)
+
+`rotate_head_up` only fixes the head→tail direction (+Y); a roll degree of freedom about
+Y remains. `rotate_head_up_symmetry.py` (a copy of `rotate_head_up.py`) additionally
+detects the bilateral symmetry plane and rolls the volume so it becomes canonical.
+
+- **Symmetry metric** (same as the `symmetry.ipynb` winner): segment → project the
+  head-up volume along Y (head-tail axis) with **`sum`** → centre the cross-section →
+  scan the mirror axis and pick the angle θ minimizing `1 − ncc(img, reflection)`
+  (normalized cross-correlation). `sum` (not `max`) avoids spurious minima from sharp
+  leg-tips; `ncc` is intensity-scale-invariant and gives the cleanest single minimum.
+- **Must run on the segmented volume.** Raw rotated volumes are ~90% non-animal voxels
+  (background/holder) which otherwise dominate and bias the axis.
+- **Roll** `= 90 − θ` about Y; the head-up rotation and roll are composed into one affine
+  (single interpolation on the raw data). Canonical frame: head-tail = Y, dorsoventral = Z,
+  left-right = X.
+- **Confidence** `= (median − min)/std` of the score curve. Below
+  `--symmetry-conf-threshold` (default 2.0) the individual is flagged
+  (`low_symmetry_confidence` in JSON + `[LOW-CONF]` in the log) — this catches curved or
+  twisted specimens that have no clean planar symmetry; symmetry alone cannot fix those.
+- Measurement runs on a downsampled copy (`--symmetry-downsample`, default 2) for speed;
+  the output tif is full resolution. `--no-symmetry` reverts to plain head-up behaviour.
+- `--composite` reuses `render_six_views`/`compose_panel` from `segment_sixview_composite`
+  to save a finished 6-view QA image (title shows roll + confidence).
+- `symmetry.ipynb` is the exploration notebook: 2D metric comparison (absdiff/iou/ncc ×
+  max/sum), a more robust 3D slice-wise reflection alternative, and a confidence survey.
 
 ### Data layout
 
@@ -93,6 +127,10 @@ data/
   finished_photos/
     rotated/<SPECIES>/tif/<individual>.tif
     composite/<SPECIES>/images/
+    rotated_symmetry/<SPECIES>/         ← rotate_head_up_symmetry.py output
+      tif/<individual>.tif              ← head-up + symmetry-roll volume
+      json/<individual>_rotation.json   ← incl. symmetry_axis_deg, roll_angle_deg, symmetry_confidence
+      composite/<individual>_sixview.png ← with --composite
 annotations/
   annotations_output/image_annotations.json  ← ground-truth head voxels [x,y,z]
 ```

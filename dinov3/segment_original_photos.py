@@ -155,7 +155,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-root",
         type=Path,
-        default=Path("data/new_photos/segmented"),
+        default=Path("data/new_photos_dinov3/segmented"),
         help="Root folder for segmented screenshots.",
     )
     parser.add_argument(

@@ -24,7 +24,7 @@ class RenderConfig:
     render_size: tuple[int, int] = (980, 980)
     # Match segment_original_photos so reference and query renders share scale.
     view_angle_deg: float = 25.0
-    patch_size: int = 14
+    patch_size: int = 16
     patch_color: tuple[int, int, int] = (0, 180, 0)
     patch_width: int = 3
 
@@ -41,7 +41,7 @@ class RenderConfig:
         if not isinstance(render_size, list) or len(render_size) != 2:
             render_size = [980, 980]
 
-        patch_size = patch_size_override if patch_size_override is not None else 14
+        patch_size = patch_size_override if patch_size_override is not None else 16
         return cls(
             threshold_percentile=float(cfg.get("threshold_percentile", 97.5)),
             zoom=float(cfg.get("zoom", 1.2)),
@@ -105,8 +105,11 @@ def patch_from_pixel(
     img_h: int,
     patch_size: int,
 ) -> dict[str, float | int]:
-    col = int(np.clip(x // patch_size, 0, (img_w - 1) // patch_size))
-    row = int(np.clip(y // patch_size, 0, (img_h - 1) // patch_size))
+    # Clip to the cropped patch grid (img // patch_size) that top3_head_patches uses.
+    # Render size (980) is divisible by 14 but not by 16, so the last partial patch
+    # column/row must be excluded or prototype patches fall outside the query grid.
+    col = int(np.clip(x // patch_size, 0, img_w // patch_size - 1))
+    row = int(np.clip(y // patch_size, 0, img_h // patch_size - 1))
 
     x0 = col * patch_size
     y0 = row * patch_size
@@ -252,13 +255,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-root",
         type=Path,
-        default=Path("data/new_photos/head_visualizations"),
+        default=Path("data/new_photos_dinov3/head_visualizations"),
         help="Root folder for rendered images with head markers.",
     )
     parser.add_argument(
         "--segmented-root",
         type=Path,
-        default=Path("data/new_photos/segmented"),
+        default=Path("data/new_photos_dinov3/segmented"),
         help="Root folder that contains per-image metadata.json from segmentation.",
     )
     parser.add_argument(
@@ -276,8 +279,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--patch-size",
         type=int,
-        default=14,
-        help="Patch size used for grid visualization (e.g. 14 for DINOv2 patch tokens).",
+        default=16,
+        help="Patch size used for grid visualization (16 for DINOv3 patch tokens).",
     )
     return parser.parse_args()
 

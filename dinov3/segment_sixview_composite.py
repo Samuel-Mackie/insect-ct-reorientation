@@ -146,7 +146,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-root",
         type=Path,
-        default=Path("data/finished_photos/composite"),
+        default=Path("data/finished_photos_dinov3/composite"),
         help="Output root for one-image composites.",
     )
     parser.add_argument(

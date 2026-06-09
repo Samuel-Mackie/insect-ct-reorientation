@@ -10,8 +10,8 @@ from pathlib import Path
 max_files = 40
 
 MODELS = {
-    "small": "facebook/dinov2-small",
-    "base": "facebook/dinov2-base",
+    "small": "facebook/dinov3-vits16-pretrain-lvd1689m",
+    "base": "facebook/dinov3-vitb16-pretrain-lvd1689m",
 }
 
 
@@ -65,13 +65,13 @@ def save_report(root: Path, header: str, timings: list[tuple[str, float, str]], 
 def run_full_pipeline(root: Path) -> None:
     timings: list[tuple[str, float, str]] = []
     pipeline_start = time.monotonic()
-    max_files = "20"
+    max_files = "40"
 
     # 1. Segment all original volumes and render 6 canonical views per individual.
     run("segment_original_photos", [
         str(root / "segment_original_photos.py"),
         "--input-root", "data/original_photos",
-        "--output-root", "data/new_photos/segmented",
+        "--output-root", "data/new_photos_dinov3/segmented",
         "--overwrite",
         "--max-files", max_files,
     ], timings)
@@ -80,35 +80,36 @@ def run_full_pipeline(root: Path) -> None:
     run("visualize_annotated_heads", [
         str(root / "visualize_annotated_heads.py"),
         "--input-root", "data/original_photos",
-        "--output-root", "data/new_photos/head_visualizations",
-        "--segmented-root", "data/new_photos/segmented",
+        "--output-root", "data/new_photos_dinov3/head_visualizations",
+        "--segmented-root", "data/new_photos_dinov3/segmented",
+        "--patch-size", "16",
         "--max-files", max_files
     ], timings)
 
-    # 3. Find top-3 likely head patches per view using DINOv2 cosine similarity.
+    # 3. Find top-3 likely head patches per view using DINOv3 cosine similarity.
     run("top3_head_patches", [
         str(root / "top3_head_patches.py"),
-        "--head-vis-root", "data/new_photos/head_visualizations",
-        "--segmented-root", "data/new_photos/segmented",
-        "--output-root", "data/new_photos/head_top3",
+        "--head-vis-root", "data/new_photos_dinov3/head_visualizations",
+        "--segmented-root", "data/new_photos_dinov3/segmented",
+        "--output-root", "data/new_photos_dinov3/head_top3",
         "--max-files", max_files,
-        "--model-name", "facebook/dinov2-small",
+        "--model-name", "facebook/dinov3-vits16-pretrain-lvd1689m",
     ], timings)
 
     # 4. Fuse head position across 6 views via camera-ray triangulation.
     run("fuse_head_position", [
         str(root / "fuse_head_position.py"),
-        "--top3-root", "data/new_photos/head_top3",
-        "--segmented-root", "data/new_photos/segmented",
-        "--output-root", "data/new_photos/head_fused",
+        "--top3-root", "data/new_photos_dinov3/head_top3",
+        "--segmented-root", "data/new_photos_dinov3/segmented",
+        "--output-root", "data/new_photos_dinov3/head_fused",
     ], timings)
 
     # 5. Rotate each volume so the head direction points to +Y.
     run("rotate_head_up", [
         str(root / "rotate_head_up.py"),
-        "--fused-root", "data/new_photos/head_fused",
+        "--fused-root", "data/new_photos_dinov3/head_fused",
         "--input-root", "data/original_photos",
-        "--output-root", "data/finished_photos/rotated",
+        "--output-root", "data/finished_photos_dinov3/rotated",
         "--overwrite",
         "--max-files", max_files
     ], timings)
@@ -116,8 +117,8 @@ def run_full_pipeline(root: Path) -> None:
     # 6. Render 6-view composites of the rotated volumes.
     run("segment_sixview_composite", [
         str(root / "segment_sixview_composite.py"),
-        "--input-root", "data/finished_photos/rotated",
-        "--output-root", "data/finished_photos/composite",
+        "--input-root", "data/finished_photos_dinov3/rotated",
+        "--output-root", "data/finished_photos_dinov3/composite",
         "--overwrite",
         "--max-files", max_files
     ], timings)
@@ -126,7 +127,7 @@ def run_full_pipeline(root: Path) -> None:
 
 
 def run_benchmark(root: Path, n_animals: int) -> None:
-    print(f"\nBenchmarking dinov2-small vs dinov2-base on {n_animals} individuals.", flush=True)
+    print(f"\nBenchmarking dinov3-vits16 vs dinov3-vitb16 on {n_animals} individuals.", flush=True)
     print("Assumes segmented/ and head_visualizations/ already exist.", flush=True)
     print("Results are written to temporary dirs and do not affect pipeline outputs.\n", flush=True)
 
@@ -134,11 +135,11 @@ def run_benchmark(root: Path, n_animals: int) -> None:
     benchmark_start = time.monotonic()
 
     for label, model_id in MODELS.items():
-        out_dir = f"data/new_photos/benchmark_top3_{label}"
+        out_dir = f"data/new_photos_dinov3/benchmark_top3_{label}"
         run(f"top3_head_patches [{label}]", [
             str(root / "top3_head_patches.py"),
-            "--head-vis-root", "data/new_photos/head_visualizations",
-            "--segmented-root", "data/new_photos/segmented",
+            "--head-vis-root", "data/new_photos_dinov3/head_visualizations",
+            "--segmented-root", "data/new_photos_dinov3/segmented",
             "--output-root", out_dir,
             "--model-name", model_id,
             "--max-files", str(n_animals),
@@ -150,22 +151,22 @@ def run_benchmark(root: Path, n_animals: int) -> None:
     if len(timings) == 2:
         (_, t_small, _), (_, t_base, _) = timings
         speedup = t_base / t_small if t_small > 0 else float("inf")
-        print(f"\n  dinov2-small : {fmt_duration(t_small)}", flush=True)
-        print(f"  dinov2-base  : {fmt_duration(t_base)}", flush=True)
-        print(f"  speedup      : {speedup:.2f}x (small is faster)", flush=True)
+        print(f"\n  dinov3-vits16 : {fmt_duration(t_small)}", flush=True)
+        print(f"  dinov3-vitb16 : {fmt_duration(t_base)}", flush=True)
+        print(f"  speedup       : {speedup:.2f}x (vits16 is faster)", flush=True)
 
     save_report(root, f"Benchmark run ({n_animals} individuals)", timings, total_elapsed)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Run the full insect CT reorientation pipeline, or benchmark DINOv2 model sizes."
+        description="Run the full insect CT reorientation pipeline, or benchmark DINOv3 model sizes."
     )
     subparsers = parser.add_subparsers(dest="command")
 
     subparsers.add_parser("run", help="Run the full pipeline (default if no command given).")
 
-    bench = subparsers.add_parser("benchmark", help="Compare dinov2-small vs dinov2-base on N individuals.")
+    bench = subparsers.add_parser("benchmark", help="Compare dinov3-vits16 vs dinov3-vitb16 on N individuals.")
     bench.add_argument(
         "--n-animals",
         type=int,
