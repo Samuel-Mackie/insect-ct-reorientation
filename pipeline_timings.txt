@@ -1,0 +1,10 @@
+Pipeline run: 2026-06-08 14:48:04
+============================================================
+  segment_original_photos                 1m 39s   OK
+  visualize_annotated_heads               1m 45s   OK
+  top3_head_patches                      11m 42s   OK
+  fuse_head_position                          6s   OK
+  rotate_head_up                          2m 20s   OK
+  segment_sixview_composite               1m 56s   OK
+============================================================
+  TOTAL                                  19m 31s

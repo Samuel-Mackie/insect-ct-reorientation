@@ -36,22 +36,25 @@ def main() -> None:
     root = Path(__file__).parent
     timings: list[tuple[str, float, str]] = []
     pipeline_start = time.monotonic()
+    max_files = "20"
 
     # 1. Segment all original volumes and render 6 canonical views per individual.
     run("segment_original_photos", [
         str(root / "segment_original_photos.py"),
         "--input-root", "data/original_photos",
         "--output-root", "data/new_photos/segmented",
-        "--overwrite",
+        "--overwrite", 
+        "--max-files", max_files,
     ], timings)
 
-    # 2. Render annotated head-marker views for the labelled reference set.
-    run("visualize_annotated_heads", [
-        str(root / "visualize_annotated_heads.py"),
-        "--input-root", "data/original_photos",
-        "--output-root", "data/new_photos/head_visualizations",
-        "--segmented-root", "data/new_photos/segmented",
-    ], timings)
+    # # 2. Render annotated head-marker views for the labelled reference set.
+    # run("visualize_annotated_heads", [
+    #     str(root / "visualize_annotated_heads.py"),
+    #     "--input-root", "data/original_photos",
+    #     "--output-root", "data/new_photos/head_visualizations",
+    #     "--segmented-root", "data/new_photos/segmented",
+    #     "--max-files", max_files,
+    # ], timings)
 
     # 3. Find top-3 likely head patches per view using DINOv2 cosine similarity.
     run("top3_head_patches", [
