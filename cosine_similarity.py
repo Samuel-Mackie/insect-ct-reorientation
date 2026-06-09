@@ -69,7 +69,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--model-name",
         type=str,
-        default="facebook/dinov2-base",
+        default="facebook/dinov2-small",
         help="Hugging Face DINO model id.",
     )
     parser.add_argument(

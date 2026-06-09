@@ -52,7 +52,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--model-name",
         type=str,
-        default="facebook/dinov2-base",
+        default="facebook/dinov2-small",
         help="Hugging Face model id.",
     )
     parser.add_argument(
@@ -81,6 +81,12 @@ def parse_args() -> argparse.Namespace:
         help="Number of ranked patch candidates to save/visualize.",
     )
     parser.add_argument("--device", type=str, default=None, help="cpu/cuda/cuda:0.")
+    parser.add_argument(
+        "--max-files",
+        type=int,
+        default=None,
+        help="Optional cap on total individuals processed (useful for benchmarks).",
+    )
     return parser.parse_args()
 
 
@@ -300,8 +306,11 @@ def main() -> None:
 
     token_cache: dict[Path, dict[str, object]] = {}
     total = 0
+    processed_individuals = 0
 
     for animal_idx, animal in enumerate(animals, start=1):
+        if args.max_files is not None and processed_individuals >= args.max_files:
+            break
         log(f"Animal {animal_idx}/{len(animals)}: {animal}")
         angle_models: dict[str, dict[str, object]] = {}
         for angle in angles:
@@ -372,6 +381,8 @@ def main() -> None:
         individuals = discover_segmented_individuals(args.segmented_root, animal)
         log(f"  Found {len(individuals)} individual(s)")
         for i_idx, individual in enumerate(individuals, start=1):
+            if args.max_files is not None and processed_individuals >= args.max_files:
+                break
             log(f"  Individual {i_idx}/{len(individuals)}: {individual}")
             for angle in angles:
                 if angle not in angle_models:
@@ -488,6 +499,7 @@ def main() -> None:
                 json_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
                 total += 1
                 log(f"    Angle {angle}: saved {overlay_path.name}")
+            processed_individuals += 1
 
     log(f"Done. Saved results for {total} image(s).")
 

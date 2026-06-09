@@ -58,9 +58,9 @@ Vedo loads volumes as `[x, y, z]` numpy arrays. All internal xyz coordinates fol
 ### Segmentation (`segment_largest_component`)
 
 Used in every pipeline script. Current implementation (multi-Otsu, class 2):
-1. `threshold_multiotsu(volume, classes=3)` → top intensity class
-2. Label connected components, pick largest by **intensity-weighted** sum (`sum_labels`)
-3. `binary_dilation(iterations=3)` + `binary_fill_holes`
+1. `threshold_multiotsu(volume, classes=3)` → top intensity class (`regions == 2`)
+2. `binary_dilation(iterations=5)` + `binary_fill_holes` to close gaps before labelling
+3. Label connected components, pick largest by **intensity-weighted** sum (`sum_labels`)
 
 Returns a boolean mask. Scripts zero out the volume outside the mask before rendering.
 
