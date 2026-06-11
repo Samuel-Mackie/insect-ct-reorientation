@@ -8,6 +8,7 @@ data/finished_photos_dinov3/
 data/new_photos/
 data/new_photos_dinov3/
 Annoteringer/annotations_output/
+data/test_dinov3_test_base_model
 
 # Optional: keep structure files if needed
 # !data/**/.gitkeep
