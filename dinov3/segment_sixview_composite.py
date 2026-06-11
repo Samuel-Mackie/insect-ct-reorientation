@@ -140,8 +140,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--input-root",
         type=Path,
-        default=Path("data/finished_photos"),
-        help="Input root, typically data/finished_photos with <species>/tif/*.tif.",
+        default=Path("data/finished_photos_dinov3/rotated"),
+        help="Input root, typically data/finished_photos_dinov3/rotated with <species>/tif/*.tif.",
     )
     parser.add_argument(
         "--output-root",

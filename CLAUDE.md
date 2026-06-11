@@ -42,7 +42,7 @@ python rotate_head_up_symmetry.py --overwrite --composite
 python segment_sixview_composite.py --input-root data/finished_photos/rotated --output-root data/finished_photos/composite --overwrite
 
 # Regenerate annotations JSON (only needed if annotation dict changes)
-python annotations/save_annotations.py
+python Annoteringer/save_annotations.py
 ```
 
 Limit scope with `--animal AC` or `--max-files 3`.
@@ -131,10 +131,10 @@ data/
       tif/<individual>.tif              ← head-up + symmetry-roll volume
       json/<individual>_rotation.json   ← incl. symmetry_axis_deg, roll_angle_deg, symmetry_confidence
       composite/<individual>_sixview.png ← with --composite
-annotations/
+Annoteringer/
   annotations_output/image_annotations.json  ← ground-truth head voxels [x,y,z]
 ```
 
 ### Annotation format
 
-`image_annotations.json`: `{ "SPECIES": { "filename.tif": [x, y, z], ... }, ... }`. Coordinates are voxel xyz. Regenerate with `python annotations/save_annotations.py` after editing the dicts in that file.
+`image_annotations.json`: `{ "SPECIES": { "filename.tif": [x, y, z], ... }, ... }`. Coordinates are voxel xyz. Regenerate with `python Annoteringer/save_annotations.py` after editing the dicts in that file.

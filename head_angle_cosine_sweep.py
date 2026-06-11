@@ -70,7 +70,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--annotations",
         type=Path,
-        default=Path("annotations/annotations_output/image_annotations.json"),
+        default=Path("Annoteringer/annotations_output/image_annotations.json"),
         help="Annotation JSON used when --annotation-xyz is not provided.",
     )
     parser.add_argument(
