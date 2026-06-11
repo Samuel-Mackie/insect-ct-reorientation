@@ -24,3 +24,23 @@ UI desgin
 
 
 brug rays og ransac til at finde hoved
+
+
+
+filer bliver fundet mange gange
+
+Fjerne det unødvendige meta data
+
+Hvad er head_cords_root og INFO_PATH
+
+kører discover_segmented_individuals mange gange
+
+Behøver vi gemme actual k i top k patches
+
+Tjek at det faktisk er nødvendigt med alle sikekrheds tjek. (divider med nul og vector med længde 0 osv.)
+
+Msåke ændre regularization i triangulate rays
+
+Husk at jeg har ændret til lstsq
+
+Måske skal vi også have dilation i segmentation
