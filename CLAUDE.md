@@ -4,137 +4,102 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-Insect CT reorientation pipeline: takes raw 3-D micro-CT volumes (`.tif` stacks) of insects, detects the head position using DINOv2 patch-token similarity, and rotates the volume so the head points in a canonical direction. Species codes map to folders under `data/original_photos/` (e.g. `AC`, `BC`, `BF`, …).
+Insect micro-CT reorientation pipeline. Input is raw 3-D `.tif` volume stacks of insects
+(one folder per species code under `data/original_photos/<SPECIES>/`). The pipeline segments
+the specimen, finds the head via DINOv3 patch-token similarity, triangulates the 3-D head
+position from multiple rendered views, and rotates each volume so the head points along +Y.
 
-## Running the pipeline
+The **entire working pipeline now lives in `full_pipeline_dinov3.ipynb`** (single notebook,
+top-to-bottom). The older one-script-per-step version (`run_pipeline.py`,
+`segment_original_photos.py`, etc.) has been retired to `gamle_filer/` — do not edit those;
+treat them as reference only.
 
-### Full pipeline (all species, overwrite existing results)
+## Running
 
-```bash
-python run_pipeline.py
-```
+There is no package manager config, test suite, or CLI. You run the notebook.
 
-### Individual steps
+- Open `full_pipeline_dinov3.ipynb` and run all cells top-to-bottom. The orchestrator is the
+  `run_all(original_path, info_path)` function near the "# Run all" heading; the cell after it
+  sets `info_path = Path("data/test_dinov3_test_base_model")` and calls it.
+- Headless re-run from the repo root:
+  `jupyter nbconvert --to notebook --execute --inplace full_pipeline_dinov3.ipynb`
+- Scope a run by editing the `animals` list (cell 2) or pointing `run_all` at a smaller
+  `original_path`. Token extraction is cached (skips if `tokens.npy` exists), so re-runs are
+  cheap; segmentation/rendering and rotation are **not** cached and re-overwrite outputs.
 
-Each step is a standalone CLI script. Run from the repo root:
+### DINOv3 weights are gated
 
-```bash
-# 1. Segment volumes and render 6 canonical views per individual
-python segment_original_photos.py --input-root data/original_photos --output-root data/new_photos/segmented --overwrite
-
-# 2. Render annotated head-marker views for the reference set
-python visualize_annotated_heads.py
-
-# 3. Find top-3 likely head patches per view using DINOv2 cosine similarity
-python top3_head_patches.py --animal AC   # or omit --animal for all
-
-# 4. Fuse head position across views via camera-ray triangulation
-python fuse_head_position.py
-
-# 5. Rotate volumes so head points up (+Y)
-python rotate_head_up.py --overwrite
-
-# 5b. (Optional) Head-up AND roll about Y so the bilateral symmetry plane is canonical.
-#     Add --composite to also save a finished 6-view QA image per volume.
-python rotate_head_up_symmetry.py --overwrite --composite
-
-# 6. Render 6-view composites of rotated volumes
-python segment_sixview_composite.py --input-root data/finished_photos/rotated --output-root data/finished_photos/composite --overwrite
-
-# Regenerate annotations JSON (only needed if annotation dict changes)
-python Annoteringer/save_annotations.py
-```
-
-Limit scope with `--animal AC` or `--max-files 3`.
+`model_name` (cell 2) is `facebook/dinov3-vitb16-pretrain-lvd1689m` (the `-vits16` small
+variant is commented out). These weights require an approved HuggingFace license. Before a
+fresh run on a new machine: accept the license on the model page, then authenticate with
+`huggingface-cli login` or `$env:HF_TOKEN = "hf_..."`. DINOv3 has register tokens between CLS
+and patch tokens — patch extraction skips `1 + num_register_tokens` prefix tokens (read
+dynamically from `model.config`).
 
 ## Key dependencies
 
-`numpy`, `scipy`, `scikit-image` (`skimage`), `tifffile`, `vedo`, `PIL` (Pillow), `torch`, `transformers` (HuggingFace DINOv2), `sklearn`.
-
-No package manager config exists in the repo; install manually. `vedo` uses a VTK backend (`settings.default_backend = "vtk"`).
+`numpy`, `scipy` (`ndimage`), `scikit-image` (`threshold_otsu`), `tifffile`, `vedo` (VTK
+backend, `settings.default_backend = "vtk"`), `Pillow`, `torch`, `transformers`
+(`AutoImageProcessor`/`AutoModel`), `scikit-learn` (`cosine_similarity`), `matplotlib`.
+Install manually; vedo renders offscreen via VTK.
 
 ## Architecture
 
-### Coordinate convention
+### Coordinate convention (important)
 
-Vedo loads volumes as `[x, y, z]` numpy arrays. All internal xyz coordinates follow this order. `volume_shape_xyz` in metadata JSONs refers to `[x, y, z]`.
+vedo loads a volume as a numpy array in `[x, y, z]` order, and that order is used everywhere:
+`volume_shape`, `center_of_mass_xyz`, the triangulated `head_xyz`, and the rotation are all in
+the same voxel xyz frame. `ndimage.center_of_mass(mask)` returns indices in that same array
+order, so COM and head live in one consistent space and the head→COM vector can be rotated to
++Y directly. Annotations in `image_annotations.json` are voxel `[x, y, z]`.
 
-### Segmentation (`segment_largest_component`)
-
-Used in every pipeline script. Current implementation (multi-Otsu, class 2):
-1. `threshold_multiotsu(volume, classes=3)` → top intensity class (`regions == 2`)
-2. `binary_dilation(iterations=5)` + `binary_fill_holes` to close gaps before labelling
-3. Label connected components, pick largest by **intensity-weighted** sum (`sum_labels`)
-
-Returns a boolean mask. Scripts zero out the volume outside the mask before rendering.
-
-### Head detection flow
+### Pipeline stages (functions, in notebook order)
 
 ```
-segment_original_photos  →  6 PNG views + metadata.json (camera params)
-        ↓
-visualize_annotated_heads →  head_projection.json (ground-truth head patch coords per view)
-        ↓
-top3_head_patches          →  DINOv2 patch tokens; PCA-reduced prototypes; cosine similarity
-                               ranks patches; emits top3_heads JSON per angle
-        ↓
-fuse_head_position         →  camera-ray triangulation → fused_head.json
-                               (estimated_head_xyz_voxel, confidence, reprojection error)
-        ↓
-rotate_head_up             →  affine rotation aligning head→CoM vector to +Y axis
-        ↓
-rotate_head_up_symmetry    →  (optional) head-up + roll about Y so the bilateral
-                               symmetry plane is canonical (see below)
+process_volume            load .tif -> segment_largest_component -> COM ->
+                          zero outside mask -> render_views (6 canonical views) ->
+                          metadata.json (camera params per view + COM + shape)
+get_head_information      project the annotated head xyz into each view with
+                          project_point_to_pixel -> head_projection.json (patch row/col)
+extract_patch_tokens      DINOv3 forward per rendered PNG -> tokens.npy (cached)
+build_prototype_animal    gather the head-patch token from every annotated individual of a
+                          species, average -> prototype_vector.npy   (needs ALL individuals)
+save_top_k_patches        cosine(prototype, foreground patch tokens) -> top_k_patches.json
+build_rays_from_individual  top-k patches + camera params -> 3-D rays (build_ray_from_pixel)
+ransac_fuse               exhaustive-pair triangulation (triangulate_rays, lstsq) + refine
+                          -> fused 3-D head point
+rotation_matrix_from_vectors / rotate_volume
+                          rotate head->COM vector onto +Y (Rodrigues) -> affine_transform
+                          -> data/.../final/<SPECIES>/<ind>.tif, then re-segment for QA
 ```
 
-### Symmetry-axis roll correction (`rotate_head_up_symmetry.py`)
+`project_point_to_pixel` (forward) and `build_ray_from_pixel` (inverse) are an exact
+projection/back-projection pair sharing `camera_basis`; keep them consistent if you touch one.
 
-`rotate_head_up` only fixes the head→tail direction (+Y); a roll degree of freedom about
-Y remains. `rotate_head_up_symmetry.py` (a copy of `rotate_head_up.py`) additionally
-detects the bilateral symmetry plane and rolls the volume so it becomes canonical.
+### Render geometry coupling
 
-- **Symmetry metric** (same as the `symmetry.ipynb` winner): segment → project the
-  head-up volume along Y (head-tail axis) with **`sum`** → centre the cross-section →
-  scan the mirror axis and pick the angle θ minimizing `1 − ncc(img, reflection)`
-  (normalized cross-correlation). `sum` (not `max`) avoids spurious minima from sharp
-  leg-tips; `ncc` is intensity-scale-invariant and gives the cleanest single minimum.
-- **Must run on the segmented volume.** Raw rotated volumes are ~90% non-animal voxels
-  (background/holder) which otherwise dominate and bias the axis.
-- **Roll** `= 90 − θ` about Y; the head-up rotation and roll are composed into one affine
-  (single interpolation on the raw data). Canonical frame: head-tail = Y, dorsoventral = Z,
-  left-right = X.
-- **Confidence** `= (median − min)/std` of the score curve. Below
-  `--symmetry-conf-threshold` (default 2.0) the individual is flagged
-  (`low_symmetry_confidence` in JSON + `[LOW-CONF]` in the log) — this catches curved or
-  twisted specimens that have no clean planar symmetry; symmetry alone cannot fix those.
-- Measurement runs on a downsampled copy (`--symmetry-downsample`, default 2) for speed;
-  the output tif is full resolution. `--no-symmetry` reverts to plain head-up behaviour.
-- `--composite` reuses `render_six_views`/`compose_panel` from `segment_sixview_composite`
-  to save a finished 6-view QA image (title shows roll + confidence).
-- `symmetry.ipynb` is the exploration notebook: 2D metric comparison (absdiff/iou/ncc ×
-  max/sum), a more robust 3D slice-wise reflection alternative, and a confidence survey.
+Rendering uses `render_size = (960, 960)` = `grid_w * patch_size` with `grid_w = grid_h = 60`,
+`patch_size = 16`. The processor runs with `do_resize=False`, so the rendered image must stay
+exactly `grid * patch_size` or the patch grid / token count will mismatch. Patch indexing is
+`flat_idx = row * grid_w + col` throughout — `grid_w` is the row stride.
 
-### Data layout
+### Data layout (under `info_path`, e.g. `data/test_dinov3_test_base_model/`)
 
 ```
-data/
-  original_photos/<SPECIES>/<individual>.tif
-  new_photos/
-    segmented/<SPECIES>/<individual>/      ← 6 PNGs + metadata.json (camera params)
-    head_visualizations/<SPECIES>/<individual>/  ← head_projection.json
-    head_top3/<SPECIES>/<individual>/json/ ← *_top3_heads.json per angle
-    head_fused/<SPECIES>/<individual>/json/fused_head.json
-  finished_photos/
-    rotated/<SPECIES>/tif/<individual>.tif
-    composite/<SPECIES>/images/
-    rotated_symmetry/<SPECIES>/         ← rotate_head_up_symmetry.py output
-      tif/<individual>.tif              ← head-up + symmetry-roll volume
-      json/<individual>_rotation.json   ← incl. symmetry_axis_deg, roll_angle_deg, symmetry_confidence
-      composite/<individual>_sixview.png ← with --composite
-Annoteringer/
-  annotations_output/image_annotations.json  ← ground-truth head voxels [x,y,z]
+segmented/<SPECIES>/<ind>/  <ind>_<ANGLE>.png  (6 views) + metadata.json + head_projection.json
+tokens/<SPECIES>/<ind>/<ind>_<ANGLE>/tokens.npy + top_k_patches.json
+tokens/<SPECIES>/prototype_vector.npy
+final/<SPECIES>/<ind>.tif            rotated (head-up) volume
+final_segmented/<SPECIES>/<ind>/     QA re-render of the rotated volume
 ```
 
-### Annotation format
+`VIEWS` defines the 6 canonical camera directions/up-vectors; `AXIS_TO_VECTOR` maps axis
+labels to unit vectors (+Y is the head-up target).
 
-`image_annotations.json`: `{ "SPECIES": { "filename.tif": [x, y, z], ... }, ... }`. Coordinates are voxel xyz. Regenerate with `python Annoteringer/save_annotations.py` after editing the dicts in that file.
+## Supporting notebooks
+
+- `HEAD_LOCALIZATION_MATH..ipynb` — derivation/checks for the projection and triangulation math.
+- `symmetry.ipynb` — exploration of a bilateral-symmetry roll correction (not wired into the
+  main pipeline here).
+- `Annoteringer/save_annotations.py` — regenerates `Annoteringer/annotations_output/image_annotations.json`
+  from in-file dicts; rerun after editing annotations.

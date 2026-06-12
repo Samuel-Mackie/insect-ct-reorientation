@@ -327,7 +327,7 @@ def main() -> None:
     # Optional: reuse the finished 6-view composite renderer from the sibling script.
     composite_fns = None
     if args.composite:
-        from segment_sixview_composite import CompositeConfig, render_six_views, compose_panel
+        from gamle_filer.segment_sixview_composite import CompositeConfig, render_six_views, compose_panel
         composite_fns = (CompositeConfig(), render_six_views, compose_panel)
 
     target_axis = axis_to_vector(args.target_axis)
