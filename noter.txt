@@ -44,3 +44,4 @@ Msåke ændre regularization i triangulate rays
 Husk at jeg har ændret til lstsq
 
 Måske skal vi også have dilation i segmentation
+

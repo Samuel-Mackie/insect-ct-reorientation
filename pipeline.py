@@ -47,8 +47,9 @@ AXIS_TO_VECTOR = {
 }
 
 animals = ["AC", "BC", "BF", "BL", "BP", "CF", "GH", "MA", "PP", "WO"]
+animals = ["GH"]
 
-model_name = "facebook/dinov3-vitb16-pretrain-lvd1689m"
+model_name = "facebook/dinov3-vits16-pretrain-lvd1689m"
 
 zoom = 1.2
 patch_size = 16
@@ -58,7 +59,7 @@ image_w = grid_w * patch_size
 image_h = grid_h * patch_size
 render_size = (image_w, image_h)
 
-ransac_threshold = 10
+ransac_threshold = 20
 ransac_iterations = 4
 
 # Almost white

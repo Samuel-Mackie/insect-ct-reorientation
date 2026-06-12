@@ -7,7 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Insect micro-CT reorientation pipeline. Input is raw 3-D `.tif` volume stacks of insects
 (one folder per species code under `data/original_photos/<SPECIES>/`). The pipeline segments
 the specimen, finds the head via DINOv3 patch-token similarity, triangulates the 3-D head
-position from multiple rendered views, and rotates each volume so the head points along +Y.
+position from multiple rendered views, and rotates each volume so the head points along the
+volume's largest axis (the longest of `volume_shape`).
 
 The **entire working pipeline now lives in `full_pipeline_dinov3.ipynb`** (single notebook,
 top-to-bottom). The older one-script-per-step version (`run_pipeline.py`,
@@ -50,8 +51,10 @@ Install manually; vedo renders offscreen via VTK.
 vedo loads a volume as a numpy array in `[x, y, z]` order, and that order is used everywhere:
 `volume_shape`, `center_of_mass_xyz`, the triangulated `head_xyz`, and the rotation are all in
 the same voxel xyz frame. `ndimage.center_of_mass(mask)` returns indices in that same array
-order, so COM and head live in one consistent space and the head→COM vector can be rotated to
-+Y directly. Annotations in `image_annotations.json` are voxel `[x, y, z]`.
+order, so COM and head live in one consistent space and the head→COM vector can be rotated onto
+the target axis directly. The target axis is chosen per volume as the largest dimension of
+`volume_shape` (positive end), so the elongated body fits the array bounds. Annotations in
+`image_annotations.json` are voxel `[x, y, z]`.
 
 ### Pipeline stages (functions, in notebook order)
 
@@ -69,7 +72,7 @@ build_rays_from_individual  top-k patches + camera params -> 3-D rays (build_ray
 ransac_fuse               exhaustive-pair triangulation (triangulate_rays, lstsq) + refine
                           -> fused 3-D head point
 rotation_matrix_from_vectors / rotate_volume
-                          rotate head->COM vector onto +Y (Rodrigues) -> affine_transform
+                          rotate head->COM vector onto the largest volume axis (Rodrigues) -> affine_transform
                           -> data/.../final/<SPECIES>/<ind>.tif, then re-segment for QA
 ```
 
@@ -94,7 +97,8 @@ final_segmented/<SPECIES>/<ind>/     QA re-render of the rotated volume
 ```
 
 `VIEWS` defines the 6 canonical camera directions/up-vectors; `AXIS_TO_VECTOR` maps axis
-labels to unit vectors (+Y is the head-up target).
+labels to unit vectors; the head-up target is chosen per volume as the largest axis of
+`volume_shape` (was previously hardcoded to +Y).
 
 ## Supporting notebooks
 

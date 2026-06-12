@@ -69,13 +69,19 @@ def rotate_one(animal, individual, original_path, info_path, do_qa):
     )
 
     volume = vedo.load(str(original_path / animal / f"{individual}.tif")).tonumpy()
-    rot = rotation_matrix_from_vectors(head_xyz - com_xyz, AXIS_TO_VECTOR["+Y"])
+    # Point the head along the largest volume axis so the elongated body fits the
+    # array bounds (affine_transform keeps the output shape == input shape).
+    target_axis = ["+X", "+Y", "+Z"][int(np.argmax(meta["volume_shape"]))]
+    rot = rotation_matrix_from_vectors(head_xyz - com_xyz, AXIS_TO_VECTOR[target_axis])
     rotated = rotate_volume(volume, rot=rot, order=1, center=com_xyz)
 
     out_tif_dir = info_path / "final" / animal
     out_tif_dir.mkdir(parents=True, exist_ok=True)
     out_tif = out_tif_dir / f"{individual}.tif"
-    tifffile.imwrite(str(out_tif), rotated.astype(volume.dtype, copy=False))
+    # vedo.load reverses tifffile's axis order, so the rotation runs in vedo's [x,y,z]
+    # frame but tifffile.imwrite would store x-as-pages. Transpose to z-as-pages so the
+    # round-trip is identity: vedo.load(out_tif) -> [x,y,z] with the head still on +Z.
+    tifffile.imwrite(str(out_tif), np.transpose(rotated, (2, 1, 0)).astype(volume.dtype, copy=False))
 
     if do_qa:
         process_volume(out_tif, info_path / "final", info_path / "final_segmented")
@@ -97,36 +103,36 @@ def main(original_path, info_path, n_workers=6, do_qa=True):
 
     # Pass 1 (parallel): segment + render. Comment this block out to reuse an
     # existing segmentation (the PNGs + metadata.json under info_path/segmented).
-    print(f"Pass 1: segment + render | {len(volumes)} volumes | {n_workers} workers")
-    with ProcessPoolExecutor(max_workers=n_workers) as ex:
-        futs = [ex.submit(segment_one, f, input_root, output_root) for f in volumes]
-        for fut in as_completed(futs):
-            print("  ", fut.result())
+    # print(f"Pass 1: segment + render | {len(volumes)} volumes | {n_workers} workers")
+    # with ProcessPoolExecutor(max_workers=n_workers) as ex:
+    #     futs = [ex.submit(segment_one, f, input_root, output_root) for f in volumes]
+    #     for fut in as_completed(futs):
+    #         print("  ", fut.result())
 
-    print("Pass 1b: head projection")
-    for f in volumes:
-        anno = annotations.get(f.parts[-2], {}).get(f.name)
-        if anno is None:
-            print(f"   no annotation for {f.parts[-2]}/{f.name} - skipping")
-            continue
-        get_head_information(f, input_root, output_root, anno)
+    # print("Pass 1b: head projection")
+    # for f in volumes:
+    #     anno = annotations.get(f.parts[-2], {}).get(f.name)
+    #     if anno is None:
+    #         print(f"   no annotation for {f.parts[-2]}/{f.name} - skipping")
+    #         continue
+    #     get_head_information(f, input_root, output_root, anno)
 
-    # Pass 2 (serial): DINO tokens use all cores, so one process. Model loaded once.
-    print("Pass 2: DINO tokens + prototype + top-k")
-    processor, model, device = load_dino_model()
-    for f in volumes:
-        animal, individual = f.parts[-2], f.stem
-        for angle, *_ in VIEWS:
-            img = output_root / animal / individual / f"{individual}_{angle}.png"
-            extract_patch_tokens(img, output_root, tokens_root, processor, model, device)
-    for animal in animals:
-        try:
-            build_prototype_animal(animal, tokens_root, output_root)
-        except ValueError as e:
-            print("  ", e)
-            continue
-        save_top_k_patches(tokens_root, output_root, animal, k=4)
-        print(f"   {animal} - finished saving patches")
+    # # Pass 2 (serial): DINO tokens use all cores, so one process. Model loaded once.
+    # print("Pass 2: DINO tokens + prototype + top-k")
+    # processor, model, device = load_dino_model()
+    # for f in volumes:
+    #     animal, individual = f.parts[-2], f.stem
+    #     for angle, *_ in VIEWS:
+    #         img = output_root / animal / individual / f"{individual}_{angle}.png"
+    #         extract_patch_tokens(img, output_root, tokens_root, processor, model, device)
+    # for animal in animals:
+    #     try:
+    #         build_prototype_animal(animal, tokens_root, output_root)
+    #     except ValueError as e:
+    #         print("  ", e)
+    #         continue
+    #     save_top_k_patches(tokens_root, output_root, animal, k=4)
+    #     print(f"   {animal} - finished saving patches")
 
     # Pass 3 (parallel): triangulate + rotate + optional QA render
     jobs = [(a, ind) for a in animals for ind in discover_segmented_individuals(output_root, a)]
