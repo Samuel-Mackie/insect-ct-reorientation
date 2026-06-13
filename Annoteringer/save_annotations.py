@@ -79,8 +79,8 @@ BP = {
     "guld_1_001.tif": [145,129,213],
     "guld_1_002.tif": [153,163,317],
     "guld_1_003.tif": [106,135,200],
+    "guld_1_004.tif": [140,97,327],
 }
-# "guld_1_004.tif" looked very weird with no visible insect
 
 CF = {
     "krol_1_000.tif": [139,114,211],
