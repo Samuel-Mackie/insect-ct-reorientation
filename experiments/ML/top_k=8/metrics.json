@@ -1,0 +1,94 @@
+{
+  "id": "top_k=8",
+  "params": {
+    "id": "top_k=8",
+    "axis": "top_k",
+    "level": "8",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "otsu",
+    "top_k": 8,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 215.88838794699404,
+    "pass2_s": 30.265317841083743,
+    "load_s": 0.21005245903506875,
+    "pass3_s": 147.0218222939875
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "ML",
+      "individual": "mel_10_018",
+      "status": "ok",
+      "n_inliers": 22,
+      "n_rays": 48
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_016",
+      "status": "ok",
+      "n_inliers": 28,
+      "n_rays": 48
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_014",
+      "status": "ok",
+      "n_inliers": 28,
+      "n_rays": 48
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_017",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 48
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_015",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 48
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_011",
+      "status": "ok",
+      "n_inliers": 34,
+      "n_rays": 48
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_012",
+      "status": "ok",
+      "n_inliers": 38,
+      "n_rays": 48
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_013",
+      "status": "ok",
+      "n_inliers": 35,
+      "n_rays": 48
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_019",
+      "status": "ok",
+      "n_inliers": 29,
+      "n_rays": 48
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_020",
+      "status": "ok",
+      "n_inliers": 31,
+      "n_rays": 48
+    }
+  ]
+}

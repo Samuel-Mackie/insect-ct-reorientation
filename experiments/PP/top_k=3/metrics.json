@@ -1,0 +1,94 @@
+{
+  "id": "top_k=3",
+  "params": {
+    "id": "top_k=3",
+    "axis": "top_k",
+    "level": "3",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "otsu",
+    "top_k": 3,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 219.57155066309497,
+    "pass2_s": 32.476133115938865,
+    "load_s": 0.20962800411507487,
+    "pass3_s": 151.86181859800126
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "PP",
+      "individual": "fluepup_1_017",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 18
+    },
+    {
+      "animal": "PP",
+      "individual": "fluepup_1_018",
+      "status": "ok",
+      "n_inliers": 14,
+      "n_rays": 18
+    },
+    {
+      "animal": "PP",
+      "individual": "fluepup_1_014",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 18
+    },
+    {
+      "animal": "PP",
+      "individual": "fluepup_1_013",
+      "status": "ok",
+      "n_inliers": 17,
+      "n_rays": 18
+    },
+    {
+      "animal": "PP",
+      "individual": "fluepup_1_011",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 18
+    },
+    {
+      "animal": "PP",
+      "individual": "fluepup_1_012",
+      "status": "ok",
+      "n_inliers": 12,
+      "n_rays": 18
+    },
+    {
+      "animal": "PP",
+      "individual": "fluepup_1_015",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 18
+    },
+    {
+      "animal": "PP",
+      "individual": "fluepup_1_016",
+      "status": "ok",
+      "n_inliers": 11,
+      "n_rays": 18
+    },
+    {
+      "animal": "PP",
+      "individual": "fluepup_1_019",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 18
+    },
+    {
+      "animal": "PP",
+      "individual": "fluepup_1_020",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 18
+    }
+  ]
+}

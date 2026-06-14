@@ -1,0 +1,94 @@
+{
+  "id": "baseline",
+  "params": {
+    "id": "baseline",
+    "axis": "baseline",
+    "level": "baseline",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "otsu",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 196.45149968995247,
+    "pass2_s": 34.72027991199866,
+    "load_s": 10.154949701041915,
+    "pass3_s": 150.02538911101874
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "BP",
+      "individual": "guld_1_011",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_018",
+      "status": "ok",
+      "n_inliers": 20,
+      "n_rays": 30
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_015",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_013",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_016",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_017",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_014",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_012",
+      "status": "ok",
+      "n_inliers": 26,
+      "n_rays": 30
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_019",
+      "status": "ok",
+      "n_inliers": 21,
+      "n_rays": 30
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_020",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    }
+  ]
+}

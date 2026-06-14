@@ -1,0 +1,94 @@
+{
+  "id": "top_k=8",
+  "params": {
+    "id": "top_k=8",
+    "axis": "top_k",
+    "level": "8",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "otsu",
+    "top_k": 8,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 221.83122436807025,
+    "pass2_s": 26.86300861602649,
+    "load_s": 0.21131840604357421,
+    "pass3_s": 151.0400650780648
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "BF",
+      "individual": "spy_1_011",
+      "status": "ok",
+      "n_inliers": 37,
+      "n_rays": 48
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_014",
+      "status": "ok",
+      "n_inliers": 39,
+      "n_rays": 48
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_015",
+      "status": "ok",
+      "n_inliers": 36,
+      "n_rays": 48
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_018",
+      "status": "ok",
+      "n_inliers": 35,
+      "n_rays": 48
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_012",
+      "status": "ok",
+      "n_inliers": 34,
+      "n_rays": 48
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_013",
+      "status": "ok",
+      "n_inliers": 39,
+      "n_rays": 48
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_016",
+      "status": "ok",
+      "n_inliers": 39,
+      "n_rays": 48
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_017",
+      "status": "ok",
+      "n_inliers": 43,
+      "n_rays": 48
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_020",
+      "status": "ok",
+      "n_inliers": 39,
+      "n_rays": 48
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_019",
+      "status": "ok",
+      "n_inliers": 43,
+      "n_rays": 48
+    }
+  ]
+}

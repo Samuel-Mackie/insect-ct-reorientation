@@ -103,36 +103,36 @@ def main(original_path, info_path, n_workers=6, do_qa=True):
 
     # Pass 1 (parallel): segment + render. Comment this block out to reuse an
     # existing segmentation (the PNGs + metadata.json under info_path/segmented).
-    # print(f"Pass 1: segment + render | {len(volumes)} volumes | {n_workers} workers")
-    # with ProcessPoolExecutor(max_workers=n_workers) as ex:
-    #     futs = [ex.submit(segment_one, f, input_root, output_root) for f in volumes]
-    #     for fut in as_completed(futs):
-    #         print("  ", fut.result())
+    print(f"Pass 1: segment + render | {len(volumes)} volumes | {n_workers} workers")
+    with ProcessPoolExecutor(max_workers=n_workers) as ex:
+        futs = [ex.submit(segment_one, f, input_root, output_root) for f in volumes]
+        for fut in as_completed(futs):
+            print("  ", fut.result())
 
-    # print("Pass 1b: head projection")
-    # for f in volumes:
-    #     anno = annotations.get(f.parts[-2], {}).get(f.name)
-    #     if anno is None:
-    #         print(f"   no annotation for {f.parts[-2]}/{f.name} - skipping")
-    #         continue
-    #     get_head_information(f, input_root, output_root, anno)
+    print("Pass 1b: head projection")
+    for f in volumes:
+        anno = annotations.get(f.parts[-2], {}).get(f.name)
+        if anno is None:
+            print(f"   no annotation for {f.parts[-2]}/{f.name} - skipping")
+            continue
+        get_head_information(f, input_root, output_root, anno)
 
-    # # Pass 2 (serial): DINO tokens use all cores, so one process. Model loaded once.
-    # print("Pass 2: DINO tokens + prototype + top-k")
-    # processor, model, device = load_dino_model()
-    # for f in volumes:
-    #     animal, individual = f.parts[-2], f.stem
-    #     for angle, *_ in VIEWS:
-    #         img = output_root / animal / individual / f"{individual}_{angle}.png"
-    #         extract_patch_tokens(img, output_root, tokens_root, processor, model, device)
-    # for animal in animals:
-    #     try:
-    #         build_prototype_animal(animal, tokens_root, output_root)
-    #     except ValueError as e:
-    #         print("  ", e)
-    #         continue
-    #     save_top_k_patches(tokens_root, output_root, animal, k=4)
-    #     print(f"   {animal} - finished saving patches")
+    # Pass 2 (serial): DINO tokens use all cores, so one process. Model loaded once.
+    print("Pass 2: DINO tokens + prototype + top-k")
+    processor, model, device = load_dino_model()
+    for f in volumes:
+        animal, individual = f.parts[-2], f.stem
+        for angle, *_ in VIEWS:
+            img = output_root / animal / individual / f"{individual}_{angle}.png"
+            extract_patch_tokens(img, output_root, tokens_root, processor, model, device)
+    for animal in animals:
+        try:
+            build_prototype_animal(animal, tokens_root, output_root)
+        except ValueError as e:
+            print("  ", e)
+            continue
+        save_top_k_patches(tokens_root, output_root, animal, k=4)
+        print(f"   {animal} - finished saving patches")
 
     # Pass 3 (parallel): triangulate + rotate + optional QA render
     jobs = [(a, ind) for a in animals for ind in discover_segmented_individuals(output_root, a)]

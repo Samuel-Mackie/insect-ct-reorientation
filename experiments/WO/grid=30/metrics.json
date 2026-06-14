@@ -1,0 +1,94 @@
+{
+  "id": "grid=30",
+  "params": {
+    "id": "grid=30",
+    "axis": "grid",
+    "level": "30",
+    "views": "6",
+    "model": "base",
+    "grid": 30,
+    "threshold": "otsu",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 74.33030995703302,
+    "pass2_s": 7.999772096052766,
+    "load_s": 0.22867532190866768,
+    "pass3_s": 58.09767834201921
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "WO",
+      "individual": "bank_1_014",
+      "status": "ok",
+      "n_inliers": 11,
+      "n_rays": 30
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_015",
+      "status": "ok",
+      "n_inliers": 17,
+      "n_rays": 30
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_012",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 30
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_018",
+      "status": "ok",
+      "n_inliers": 16,
+      "n_rays": 30
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_011",
+      "status": "ok",
+      "n_inliers": 11,
+      "n_rays": 30
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_017",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 30
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_013",
+      "status": "ok",
+      "n_inliers": 12,
+      "n_rays": 30
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_016",
+      "status": "ok",
+      "n_inliers": 13,
+      "n_rays": 30
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_020",
+      "status": "ok",
+      "n_inliers": 13,
+      "n_rays": 30
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_019",
+      "status": "ok",
+      "n_inliers": 21,
+      "n_rays": 30
+    }
+  ]
+}

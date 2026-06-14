@@ -1,0 +1,94 @@
+{
+  "id": "threshold=98",
+  "params": {
+    "id": "threshold=98",
+    "axis": "threshold",
+    "level": "98",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "98",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 258.59594858798664,
+    "pass2_s": 27.440356970997527,
+    "load_s": 0.21452467399649322,
+    "pass3_s": 166.68582384695765
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "BF",
+      "individual": "spy_1_011",
+      "status": "ok",
+      "n_inliers": 9,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_018",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_013",
+      "status": "ok",
+      "n_inliers": 11,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_015",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_014",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_017",
+      "status": "ok",
+      "n_inliers": 26,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_012",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_016",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_020",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_019",
+      "status": "ok",
+      "n_inliers": 29,
+      "n_rays": 30
+    }
+  ]
+}

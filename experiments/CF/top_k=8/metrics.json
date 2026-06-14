@@ -1,0 +1,94 @@
+{
+  "id": "top_k=8",
+  "params": {
+    "id": "top_k=8",
+    "axis": "top_k",
+    "level": "8",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "otsu",
+    "top_k": 8,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 208.45336751407012,
+    "pass2_s": 25.218596028978936,
+    "load_s": 0.21106959600001574,
+    "pass3_s": 150.13383782899473
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "CF",
+      "individual": "krol_1_011",
+      "status": "ok",
+      "n_inliers": 35,
+      "n_rays": 48
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_014",
+      "status": "ok",
+      "n_inliers": 44,
+      "n_rays": 48
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_013",
+      "status": "ok",
+      "n_inliers": 31,
+      "n_rays": 48
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_017",
+      "status": "ok",
+      "n_inliers": 47,
+      "n_rays": 48
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_016",
+      "status": "ok",
+      "n_inliers": 35,
+      "n_rays": 48
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_018",
+      "status": "ok",
+      "n_inliers": 39,
+      "n_rays": 48
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_012",
+      "status": "ok",
+      "n_inliers": 44,
+      "n_rays": 48
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_015",
+      "status": "ok",
+      "n_inliers": 42,
+      "n_rays": 48
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_020",
+      "status": "ok",
+      "n_inliers": 47,
+      "n_rays": 48
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_019",
+      "status": "ok",
+      "n_inliers": 47,
+      "n_rays": 48
+    }
+  ]
+}

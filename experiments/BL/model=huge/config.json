@@ -1,0 +1,11 @@
+{
+  "id": "model=huge",
+  "axis": "model",
+  "level": "huge",
+  "views": "6",
+  "model": "huge",
+  "grid": 60,
+  "threshold": "otsu",
+  "top_k": 5,
+  "anno_mode": "5_animals"
+}

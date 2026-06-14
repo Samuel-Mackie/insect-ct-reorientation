@@ -1,0 +1,94 @@
+{
+  "id": "threshold=97",
+  "params": {
+    "id": "threshold=97",
+    "axis": "threshold",
+    "level": "97",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "97",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 263.284815588966,
+    "pass2_s": 26.94419010099955,
+    "load_s": 0.21842266398016363,
+    "pass3_s": 184.30958507501055
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "CF",
+      "individual": "krol_1_011",
+      "status": "ok",
+      "n_inliers": 19,
+      "n_rays": 30
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_014",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_018",
+      "status": "ok",
+      "n_inliers": 27,
+      "n_rays": 30
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_015",
+      "status": "ok",
+      "n_inliers": 26,
+      "n_rays": 30
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_012",
+      "status": "ok",
+      "n_inliers": 29,
+      "n_rays": 30
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_016",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_013",
+      "status": "ok",
+      "n_inliers": 17,
+      "n_rays": 30
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_017",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_019",
+      "status": "ok",
+      "n_inliers": 29,
+      "n_rays": 30
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_020",
+      "status": "ok",
+      "n_inliers": 29,
+      "n_rays": 30
+    }
+  ]
+}

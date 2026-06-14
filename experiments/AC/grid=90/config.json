@@ -1,0 +1,11 @@
+{
+  "id": "grid=90",
+  "axis": "grid",
+  "level": "90",
+  "views": "6",
+  "model": "base",
+  "grid": 90,
+  "threshold": "otsu",
+  "top_k": 5,
+  "anno_mode": "5_animals"
+}

@@ -1,0 +1,15 @@
+id,axis,level,views,model,grid,threshold,top_k,anno_mode,n_individuals,n_ok,pass1_s,pass2_s,pass3_s,load_s,total_s,status
+baseline,baseline,baseline,6,base,60,otsu,5,5_animals,10,10,196.45,34.72,150.03,10.15,383.81,ok
+views=4,views,4,4,base,60,otsu,5,5_animals,10,10,137.54,15.86,150.14,0.22,305.84,ok
+model=small,model,small,6,small,60,otsu,5,5_animals,10,10,194.67,14.59,150.25,0.14,361.94,ok
+model=large,model,large,6,large,60,otsu,5,5_animals,10,10,194.8,46.44,150.25,0.63,394.19,ok
+model=huge,model,huge,6,huge,60,otsu,5,5_animals,10,10,197.0,85.14,150.28,1.41,435.33,ok
+grid=30,grid,30,6,base,30,otsu,5,5_animals,10,10,67.78,6.84,60.26,0.23,136.39,ok
+grid=90,grid,90,6,base,90,otsu,5,5_animals,10,10,402.34,75.48,300.25,0.22,782.49,ok
+threshold=96,threshold,96,6,base,60,96,5,5_animals,10,10,245.28,26.53,185.82,0.22,460.72,ok
+threshold=97,threshold,97,6,base,60,97,5,5_animals,10,10,238.93,27.09,178.94,0.22,448.18,ok
+threshold=98,threshold,98,6,base,60,98,5,5_animals,10,10,220.17,24.98,167.38,0.24,415.39,ok
+top_k=3,top_k,3,6,base,60,otsu,3,5_animals,10,10,195.8,25.31,151.98,0.42,375.74,ok
+top_k=8,top_k,8,6,base,60,otsu,8,5_animals,10,10,194.76,23.43,151.83,0.21,372.71,ok
+anno_mode=1_image,anno_mode,1_image,6,base,60,otsu,5,1_image,10,10,194.69,24.91,151.21,0.22,373.43,ok
+anno_mode=1_animal,anno_mode,1_animal,6,base,60,otsu,5,1_animal,10,10,194.89,25.2,150.85,0.21,373.63,ok

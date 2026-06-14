@@ -1,0 +1,94 @@
+{
+  "id": "model=huge",
+  "params": {
+    "id": "model=huge",
+    "axis": "model",
+    "level": "huge",
+    "views": "6",
+    "model": "huge",
+    "grid": 60,
+    "threshold": "otsu",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 215.55292416503653,
+    "pass2_s": 105.34691095701419,
+    "load_s": 1.3505715089850128,
+    "pass3_s": 146.75041410897393
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "ML",
+      "individual": "mel_10_018",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_014",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_016",
+      "status": "ok",
+      "n_inliers": 22,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_017",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_015",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_012",
+      "status": "ok",
+      "n_inliers": 20,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_013",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_011",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_019",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_020",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    }
+  ]
+}

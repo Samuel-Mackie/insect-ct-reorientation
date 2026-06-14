@@ -1,0 +1,94 @@
+{
+  "id": "anno_mode=1_animal",
+  "params": {
+    "id": "anno_mode=1_animal",
+    "axis": "anno_mode",
+    "level": "1_animal",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "otsu",
+    "top_k": 5,
+    "anno_mode": "1_animal"
+  },
+  "timings": {
+    "pass1_s": 220.24247283895966,
+    "pass2_s": 28.051870369003154,
+    "load_s": 0.21426570496987551,
+    "pass3_s": 148.71838245203253
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "BL",
+      "individual": "boffel_1_016",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_011",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_018",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_013",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_017",
+      "status": "ok",
+      "n_inliers": 21,
+      "n_rays": 30
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_015",
+      "status": "ok",
+      "n_inliers": 19,
+      "n_rays": 30
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_014",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_012",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_019",
+      "status": "ok",
+      "n_inliers": 20,
+      "n_rays": 30
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_020",
+      "status": "ok",
+      "n_inliers": 26,
+      "n_rays": 30
+    }
+  ]
+}

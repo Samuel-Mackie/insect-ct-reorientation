@@ -1,0 +1,94 @@
+{
+  "id": "threshold=98",
+  "params": {
+    "id": "threshold=98",
+    "axis": "threshold",
+    "level": "98",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "98",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 298.1714618880069,
+    "pass2_s": 27.1766023238888,
+    "load_s": 0.2149471880402416,
+    "pass3_s": 182.57605325698387
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_011",
+      "status": "ok",
+      "n_inliers": 29,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_015",
+      "status": "ok",
+      "n_inliers": 28,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_013",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_018",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_014",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_017",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_012",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_016",
+      "status": "ok",
+      "n_inliers": 27,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_019",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_020",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    }
+  ]
+}

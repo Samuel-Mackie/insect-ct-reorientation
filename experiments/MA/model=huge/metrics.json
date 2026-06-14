@@ -1,0 +1,94 @@
+{
+  "id": "model=huge",
+  "params": {
+    "id": "model=huge",
+    "axis": "model",
+    "level": "huge",
+    "views": "6",
+    "model": "huge",
+    "grid": 60,
+    "threshold": "otsu",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 205.71375220397022,
+    "pass2_s": 93.52060536504723,
+    "load_s": 1.375283133937046,
+    "pass3_s": 150.4267143519828
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "MA",
+      "individual": "maddi_1_013",
+      "status": "ok",
+      "n_inliers": 21,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_018",
+      "status": "ok",
+      "n_inliers": 28,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_015",
+      "status": "ok",
+      "n_inliers": 27,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_016",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_012",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_017",
+      "status": "ok",
+      "n_inliers": 28,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_011",
+      "status": "ok",
+      "n_inliers": 22,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_014",
+      "status": "ok",
+      "n_inliers": 22,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_020",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_019",
+      "status": "ok",
+      "n_inliers": 22,
+      "n_rays": 30
+    }
+  ]
+}

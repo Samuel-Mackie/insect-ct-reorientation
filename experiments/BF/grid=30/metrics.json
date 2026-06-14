@@ -1,0 +1,94 @@
+{
+  "id": "grid=30",
+  "params": {
+    "id": "grid=30",
+    "axis": "grid",
+    "level": "30",
+    "views": "6",
+    "model": "base",
+    "grid": 30,
+    "threshold": "otsu",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 76.01762762502767,
+    "pass2_s": 6.892831563018262,
+    "load_s": 0.22839015896897763,
+    "pass3_s": 58.64034364093095
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "BF",
+      "individual": "spy_1_011",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_013",
+      "status": "ok",
+      "n_inliers": 22,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_018",
+      "status": "ok",
+      "n_inliers": 17,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_014",
+      "status": "ok",
+      "n_inliers": 20,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_016",
+      "status": "ok",
+      "n_inliers": 19,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_017",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_012",
+      "status": "ok",
+      "n_inliers": 20,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_015",
+      "status": "ok",
+      "n_inliers": 20,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_019",
+      "status": "ok",
+      "n_inliers": 26,
+      "n_rays": 30
+    },
+    {
+      "animal": "BF",
+      "individual": "spy_1_020",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 30
+    }
+  ]
+}

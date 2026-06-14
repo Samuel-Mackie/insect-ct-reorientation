@@ -1,0 +1,11 @@
+{
+  "id": "model=small",
+  "axis": "model",
+  "level": "small",
+  "views": "6",
+  "model": "small",
+  "grid": 60,
+  "threshold": "otsu",
+  "top_k": 5,
+  "anno_mode": "5_animals"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "anno_mode=1_animal",
+  "axis": "anno_mode",
+  "level": "1_animal",
+  "views": "6",
+  "model": "base",
+  "grid": 60,
+  "threshold": "otsu",
+  "top_k": 5,
+  "anno_mode": "1_animal"
+}

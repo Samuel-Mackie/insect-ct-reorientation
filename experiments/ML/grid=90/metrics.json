@@ -1,0 +1,94 @@
+{
+  "id": "grid=90",
+  "params": {
+    "id": "grid=90",
+    "axis": "grid",
+    "level": "90",
+    "views": "6",
+    "model": "base",
+    "grid": 90,
+    "threshold": "otsu",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 445.33149886503816,
+    "pass2_s": 74.43862207501661,
+    "load_s": 0.21395197696983814,
+    "pass3_s": 291.03110709402245
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "ML",
+      "individual": "mel_10_018",
+      "status": "ok",
+      "n_inliers": 14,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_016",
+      "status": "ok",
+      "n_inliers": 14,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_017",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_015",
+      "status": "ok",
+      "n_inliers": 21,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_011",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_013",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_014",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_012",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_019",
+      "status": "ok",
+      "n_inliers": 20,
+      "n_rays": 30
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_020",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 30
+    }
+  ]
+}

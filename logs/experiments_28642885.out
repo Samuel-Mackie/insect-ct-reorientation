@@ -1,0 +1,2051 @@
+===================== AC =====================
+Discovering input volumes ...
+Found 724 volumes for ['AC']
+Experiments: 14 configs | animals=['AC'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 218s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9783.20it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 36s (model load 7s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=217.7s p2=35.9s p3=150.03s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 152s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8172.48it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=152.48s p2=18.46s p3=149.41s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 218s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights:   6%|▌         | 12/211 [00:00<00:01, 105.25it/s]Loading weights:  11%|█         | 23/211 [00:00<00:02, 86.46it/s] Loading weights:  15%|█▌        | 32/211 [00:00<00:02, 77.69it/s]Loading weights:  19%|█▉        | 40/211 [00:00<00:02, 64.56it/s]Loading weights:  23%|██▎       | 49/211 [00:00<00:02, 69.46it/s]Loading weights:  28%|██▊       | 60/211 [00:00<00:01, 80.08it/s]Loading weights:  33%|███▎      | 69/211 [00:00<00:02, 64.69it/s]Loading weights:  36%|███▋      | 77/211 [00:01<00:02, 55.09it/s]Loading weights:  41%|████      | 86/211 [00:01<00:02, 54.52it/s]Loading weights:  45%|████▌     | 95/211 [00:01<00:01, 60.65it/s]Loading weights: 100%|██████████| 211/211 [00:01<00:00, 143.89it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 20s (model load 3s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=218.45s p2=20.13s p3=149.41s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights:   3%|▎         | 14/415 [00:00<00:02, 137.47it/s]Loading weights:   7%|▋         | 28/415 [00:00<00:04, 90.68it/s] Loading weights:  10%|█         | 43/415 [00:00<00:03, 110.64it/s]Loading weights:  13%|█▎        | 56/415 [00:00<00:05, 63.03it/s] Loading weights:  16%|█▌        | 67/415 [00:00<00:04, 71.65it/s]Loading weights:  19%|█▊        | 77/415 [00:01<00:05, 60.41it/s]Loading weights:  20%|██        | 85/415 [00:01<00:05, 57.24it/s]Loading weights:  22%|██▏       | 92/415 [00:01<00:05, 57.92it/s]Loading weights:  24%|██▍       | 99/415 [00:01<00:05, 56.27it/s]Loading weights:  26%|██▌       | 108/415 [00:01<00:04, 63.39it/s]Loading weights:  28%|██▊       | 117/415 [00:01<00:04, 66.50it/s]Loading weights:  30%|███       | 125/415 [00:01<00:05, 55.35it/s]Loading weights:  32%|███▏      | 132/415 [00:02<00:05, 55.64it/s]Loading weights:  33%|███▎      | 138/415 [00:02<00:05, 53.37it/s]Loading weights:  35%|███▍      | 144/415 [00:02<00:05, 52.64it/s]Loading weights:  37%|███▋      | 153/415 [00:02<00:04, 54.05it/s]Loading weights:  38%|███▊      | 159/415 [00:02<00:05, 50.92it/s]Loading weights:  40%|███▉      | 165/415 [00:02<00:04, 52.32it/s]Loading weights:  41%|████      | 171/415 [00:02<00:05, 47.03it/s]Loading weights:  43%|████▎     | 177/415 [00:02<00:05, 46.49it/s]Loading weights:  45%|████▍     | 186/415 [00:03<00:05, 44.80it/s]Loading weights:  46%|████▌     | 191/415 [00:03<00:05, 43.30it/s]Loading weights:  47%|████▋     | 196/415 [00:03<00:06, 36.43it/s]Loading weights: 100%|██████████| 415/415 [00:03<00:00, 116.83it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 95s (model load 40s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=220.16s p2=95.18s p3=148.58s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 218s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights:   2%|▏         | 15/615 [00:00<00:05, 117.84it/s]Loading weights:   4%|▍         | 27/615 [00:00<00:07, 83.64it/s] Loading weights:   7%|▋         | 45/615 [00:00<00:05, 105.16it/s]Loading weights:  11%|█         | 66/615 [00:00<00:04, 136.46it/s]Loading weights:  13%|█▎        | 81/615 [00:00<00:04, 117.77it/s]Loading weights:  15%|█▌        | 94/615 [00:00<00:05, 98.46it/s] Loading weights:  18%|█▊        | 113/615 [00:00<00:04, 119.59it/s]Loading weights:  21%|██▏       | 131/615 [00:01<00:03, 133.27it/s]Loading weights:  24%|██▎       | 146/615 [00:01<00:03, 135.94it/s]Loading weights:  26%|██▌       | 161/615 [00:01<00:03, 132.70it/s]Loading weights:  28%|██▊       | 175/615 [00:01<00:04, 105.85it/s]Loading weights:  30%|███       | 187/615 [00:01<00:04, 103.62it/s]Loading weights:  32%|███▏      | 199/615 [00:01<00:04, 85.75it/s] Loading weights:  34%|███▍      | 209/615 [00:01<00:04, 86.47it/s]Loading weights:  36%|███▌      | 219/615 [00:02<00:05, 67.64it/s]Loading weights:  38%|███▊      | 231/615 [00:02<00:05, 75.36it/s]Loading weights:  39%|███▉      | 242/615 [00:02<00:04, 77.98it/s]Loading weights:  42%|████▏     | 256/615 [00:02<00:03, 91.26it/s]Loading weights:  43%|████▎     | 267/615 [00:02<00:03, 95.67it/s]Loading weights:  45%|████▌     | 278/615 [00:02<00:04, 71.35it/s]Loading weights:  47%|████▋     | 287/615 [00:03<00:04, 67.79it/s]Loading weights:  48%|████▊     | 298/615 [00:03<00:04, 74.80it/s]Loading weights:  50%|████▉     | 307/615 [00:03<00:04, 70.50it/s]Loading weights: 100%|██████████| 615/615 [00:03<00:00, 183.41it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 162s (model load 60s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=217.76s p2=162.1s p3=149.62s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 75s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7816.97it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 8s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 61s
+      done: 10/10 rotated | p1=75.15s p2=7.96s p3=60.54s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 450s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11654.22it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 73s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 296s
+      done: 10/10 rotated | p1=449.79s p2=73.39s p3=295.92s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 330s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9119.65it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 207s
+      done: 10/10 rotated | p1=330.32s p2=28.21s p3=206.89s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 301s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10077.41it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 31s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 190s
+      done: 10/10 rotated | p1=301.33s p2=31.01s p3=190.32s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 247s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10505.05it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 30s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 162s
+      done: 10/10 rotated | p1=247.08s p2=29.79s p3=162.36s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 218s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11108.44it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 151s
+      done: 10/10 rotated | p1=217.53s p2=28.07s p3=150.73s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 218s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10647.23it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=217.96s p2=27.7s p3=149.76s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10728.03it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=218.53s p2=27.18s p3=149.21s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10540.08it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=218.57s p2=27.73s p3=149.91s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/AC/<config_id>/composites/
+===================== BC =====================
+Discovering input volumes ...
+Found 761 volumes for ['BC']
+Experiments: 14 configs | animals=['BC'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10158.03it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 37s (model load 10s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=219.6s p2=36.65s p3=148.21s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 153s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8892.22it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=152.53s p2=18.47s p3=147.79s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 218s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10279.08it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 17s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=218.08s p2=16.61s p3=148.23s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10007.74it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 53s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=219.77s p2=53.15s p3=148.23s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 9278.03it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 98s (model load 2s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=218.74s p2=98.47s p3=148.17s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 75s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10111.14it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 59s
+      done: 10/10 rotated | p1=75.37s p2=7.16s p3=58.88s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 451s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8987.95it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 74s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 293s
+      done: 10/10 rotated | p1=450.85s p2=74.18s p3=293.07s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 344s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10898.32it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 29s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 212s
+      done: 10/10 rotated | p1=344.38s p2=28.58s p3=211.56s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 322s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8310.93it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 201s
+      done: 10/10 rotated | p1=321.8s p2=26.9s p3=200.98s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 298s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9436.66it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 183s
+      done: 10/10 rotated | p1=298.17s p2=27.18s p3=182.58s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10569.41it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=219.47s p2=26.52s p3=147.54s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10838.13it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=219.34s p2=26.57s p3=148.62s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 218s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10193.60it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=218.31s p2=26.21s p3=147.7s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 13578.59it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=219.03s p2=27.39s p3=147.49s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BC/<config_id>/composites/
+===================== BF =====================
+Discovering input volumes ...
+Found 733 volumes for ['BF']
+Experiments: 14 configs | animals=['BF'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 223s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9614.95it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 36s (model load 9s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 151s
+      done: 10/10 rotated | p1=222.72s p2=36.44s p3=150.64s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 156s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9101.08it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=155.78s p2=17.96s p3=150.14s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 222s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10858.87it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 17s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 151s
+      done: 10/10 rotated | p1=221.74s p2=16.53s p3=150.62s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 223s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10041.05it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 52s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 151s
+      done: 10/10 rotated | p1=222.59s p2=51.86s p3=151.17s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 223s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 8496.14it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 97s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=222.7s p2=97.43s p3=150.03s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 76s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9580.49it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 59s
+      done: 10/10 rotated | p1=76.02s p2=6.89s p3=58.64s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 457s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9803.25it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 74s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 297s
+      done: 10/10 rotated | p1=457.19s p2=74.15s p3=296.76s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 301s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10283.02it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 29s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 188s
+      done: 10/10 rotated | p1=301.19s p2=29.39s p3=187.83s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 280s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10333.33it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 175s
+      done: 10/10 rotated | p1=280.13s p2=27.59s p3=175.3s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 259s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10166.08it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 167s
+      done: 10/10 rotated | p1=258.6s p2=27.44s p3=166.69s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 222s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11497.22it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 29s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=222.06s p2=28.51s p3=150.41s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 222s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10078.10it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 151s
+      done: 10/10 rotated | p1=221.83s p2=26.86s p3=151.04s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 222s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10054.51it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=221.7s p2=27.82s p3=150.48s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 222s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11047.56it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=221.74s p2=27.44s p3=149.66s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BF/<config_id>/composites/
+===================== BL =====================
+Discovering input volumes ...
+Found 773 volumes for ['BL']
+Experiments: 14 configs | animals=['BL'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 222s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9525.22it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 41s (model load 10s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=221.82s p2=40.95s p3=149.24s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 153s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8947.69it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=152.93s p2=18.23s p3=148.25s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10768.10it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=219.11s p2=18.45s p3=149.71s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 9799.06it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 53s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=219.97s p2=53.2s p3=148.4s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 9600.06it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 98s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=219.16s p2=98.34s p3=149.62s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 75s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8323.28it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 8s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 58s
+      done: 10/10 rotated | p1=75.31s p2=7.8s p3=57.7s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 453s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10428.80it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 75s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 297s
+      done: 10/10 rotated | p1=452.8s p2=74.53s p3=296.84s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 260s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10029.56it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 175s
+      done: 10/10 rotated | p1=260.42s p2=28.29s p3=175.19s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 260s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10815.08it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 174s
+      done: 10/10 rotated | p1=259.91s p2=27.38s p3=173.84s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 259s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10835.74it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 29s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 174s
+      done: 10/10 rotated | p1=258.53s p2=28.79s p3=174.39s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 14576.27it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=219.23s p2=27.95s p3=149.33s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 222s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9993.54it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=221.54s p2=28.36s p3=149.23s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11016.76it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=219.45s p2=27.9s p3=149.14s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10922.67it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=220.24s p2=28.05s p3=148.72s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BL/<config_id>/composites/
+===================== BP =====================
+Discovering input volumes ...
+Found 748 volumes for ['BP']
+Experiments: 14 configs | animals=['BP'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 196s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 15653.43it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 35s (model load 10s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=196.45s p2=34.72s p3=150.03s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 138s
+   Pass 2/3: DINO tokens for 14 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 16174.10it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 16s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=137.54s p2=15.86s p3=150.14s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 195s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9941.01it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 15s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=194.67s p2=14.59s p3=150.25s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 195s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 9657.91it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 46s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=194.8s p2=46.44s p3=150.25s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 197s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 9741.01it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 85s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=197.0s p2=85.14s p3=150.28s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 68s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8921.71it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 60s
+      done: 10/10 rotated | p1=67.78s p2=6.84s p3=60.26s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 402s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9174.20it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 75s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 300s
+      done: 10/10 rotated | p1=402.34s p2=75.48s p3=300.25s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 245s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9112.51it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 186s
+      done: 10/10 rotated | p1=245.28s p2=26.53s p3=185.82s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 239s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10110.80it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 179s
+      done: 10/10 rotated | p1=238.93s p2=27.09s p3=178.94s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9589.42it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 167s
+      done: 10/10 rotated | p1=220.17s p2=24.98s p3=167.38s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 196s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10369.90it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 152s
+      done: 10/10 rotated | p1=195.8s p2=25.31s p3=151.98s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 195s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11050.46it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 23s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 152s
+      done: 10/10 rotated | p1=194.76s p2=23.43s p3=151.83s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 195s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10222.68it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 151s
+      done: 10/10 rotated | p1=194.69s p2=24.91s p3=151.21s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 195s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11186.22it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 151s
+      done: 10/10 rotated | p1=194.89s p2=25.2s p3=150.85s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/BP/<config_id>/composites/
+===================== CF =====================
+Discovering input volumes ...
+Found 756 volumes for ['CF']
+Experiments: 14 configs | animals=['CF'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 209s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 15447.42it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 40s (model load 12s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=209.2s p2=39.84s p3=150.2s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 146s
+   Pass 2/3: DINO tokens for 15 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9240.19it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 17s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=145.98s p2=16.79s p3=150.23s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 209s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10843.04it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 16s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=209.25s p2=16.33s p3=149.49s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10092.93it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 50s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 151s
+      done: 10/10 rotated | p1=208.31s p2=49.61s p3=150.76s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 10497.92it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 103s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=208.31s p2=103.2s p3=149.87s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 72s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9255.46it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 59s
+      done: 10/10 rotated | p1=71.91s p2=6.64s p3=58.99s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 429s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9115.42it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 68s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 297s
+      done: 10/10 rotated | p1=429.49s p2=67.93s p3=297.26s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 277s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10102.14it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 194s
+      done: 10/10 rotated | p1=276.9s p2=25.58s p3=193.76s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 263s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 15600.73it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 184s
+      done: 10/10 rotated | p1=263.28s p2=26.94s p3=184.31s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 245s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10693.16it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 171s
+      done: 10/10 rotated | p1=245.48s p2=26.51s p3=170.62s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10807.42it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=208.35s p2=25.96s p3=150.09s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10920.91it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=208.45s p2=25.22s p3=150.13s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 209s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9935.20it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=208.74s p2=25.04s p3=149.88s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11040.40it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=208.44s p2=24.74s p3=150.39s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/CF/<config_id>/composites/
+===================== GH =====================
+Discovering input volumes ...
+Found 713 volumes for ['GH']
+Experiments: 14 configs | animals=['GH'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 205s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9726.86it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 38s (model load 11s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=204.72s p2=37.67s p3=146.77s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 143s
+   Pass 2/3: DINO tokens for 15 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9581.32it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=143.37s p2=17.82s p3=147.14s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 205s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10300.50it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=204.67s p2=17.67s p3=146.19s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10020.01it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 51s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=204.19s p2=50.92s p3=146.21s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 9467.85it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 94s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=203.66s p2=93.88s p3=146.71s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 71s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8572.24it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 57s
+      done: 10/10 rotated | p1=71.08s p2=7.22s p3=57.14s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 418s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9806.73it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 76s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 291s
+      done: 10/10 rotated | p1=418.34s p2=75.69s p3=291.37s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 257s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10529.80it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 177s
+      done: 10/10 rotated | p1=257.37s p2=27.09s p3=177.24s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 242s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10733.63it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 162s
+      done: 10/10 rotated | p1=242.36s p2=27.42s p3=161.63s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 207s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9675.60it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=207.5s p2=28.08s p3=146.26s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 205s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10911.09it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=205.21s p2=26.98s p3=147.8s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10749.01it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=203.72s p2=27.53s p3=147.89s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10237.70it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 29s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=204.08s p2=29.14s p3=148.24s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10886.93it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=204.24s p2=25.95s p3=147.09s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/GH/<config_id>/composites/
+===================== MA =====================
+Discovering input volumes ...
+Found 758 volumes for ['MA']
+Experiments: 14 configs | animals=['MA'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10298.46it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 40s (model load 11s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=206.0s p2=39.97s p3=148.74s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 144s
+   Pass 2/3: DINO tokens for 15 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9207.32it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 19s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=144.01s p2=18.71s p3=148.25s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10252.53it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 15s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=206.41s p2=15.28s p3=148.62s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10700.08it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 54s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=206.36s p2=53.93s p3=148.94s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 14173.92it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 94s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=205.71s p2=93.52s p3=150.43s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 71s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9192.88it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 59s
+      done: 10/10 rotated | p1=71.09s p2=7.32s p3=58.78s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 424s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9511.51it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 72s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 295s
+      done: 10/10 rotated | p1=424.14s p2=71.83s p3=295.33s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 237s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10900.33it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 171s
+      done: 10/10 rotated | p1=236.51s p2=27.17s p3=170.84s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 236s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10162.70it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 171s
+      done: 10/10 rotated | p1=236.33s p2=28.38s p3=170.54s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 235s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10685.80it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 166s
+      done: 10/10 rotated | p1=235.33s p2=27.18s p3=166.27s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10692.77it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=205.58s p2=26.62s p3=148.62s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 205s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10924.96it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=205.36s p2=26.45s p3=149.44s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10954.44it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=205.74s p2=26.52s p3=149.16s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9856.20it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=206.31s p2=27.66s p3=149.38s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/MA/<config_id>/composites/
+===================== ML =====================
+Discovering input volumes ...
+Found 737 volumes for ['ML']
+Experiments: 14 configs | animals=['ML'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 217s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9654.49it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 40s (model load 11s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=216.76s p2=40.03s p3=148.22s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 151s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8818.68it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 21s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=150.74s p2=21.16s p3=148.02s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 216s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9597.85it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=215.96s p2=17.77s p3=146.87s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 216s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 9308.66it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 56s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=216.4s p2=56.48s p3=146.54s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 216s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 10213.56it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 105s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=215.55s p2=105.35s p3=146.75s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 74s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9927.74it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 8s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 60s
+      done: 10/10 rotated | p1=74.47s p2=8.38s p3=59.71s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 445s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8532.90it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 74s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 291s
+      done: 10/10 rotated | p1=445.33s p2=74.44s p3=291.03s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 338s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10812.70it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 30s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 203s
+      done: 10/10 rotated | p1=337.8s p2=29.9s p3=203.47s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 294s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9003.77it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 30s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 177s
+      done: 10/10 rotated | p1=294.18s p2=30.26s p3=177.44s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 235s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9677.72it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 31s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 149s
+      done: 10/10 rotated | p1=235.12s p2=30.65s p3=149.43s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 217s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11163.37it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 30s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=216.67s p2=29.74s p3=146.6s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 216s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10702.60it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 30s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=215.89s p2=30.27s p3=147.02s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 216s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10870.74it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 31s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=215.72s p2=30.62s p3=150.37s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 216s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11013.06it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 32s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 152s
+      done: 10/10 rotated | p1=216.32s p2=32.28s p3=152.03s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/ML/<config_id>/composites/
+===================== PP =====================
+Discovering input volumes ...
+Found 765 volumes for ['PP']
+Experiments: 14 configs | animals=['PP'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9264.38it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 39s (model load 11s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 152s
+      done: 10/10 rotated | p1=219.29s p2=39.17s p3=152.22s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 153s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9206.46it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 19s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=153.15s p2=19.06s p3=149.74s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8837.17it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 152s
+      done: 10/10 rotated | p1=220.29s p2=18.02s p3=152.39s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 9697.08it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 56s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 151s
+      done: 10/10 rotated | p1=219.94s p2=55.71s p3=151.12s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 9148.71it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 103s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 152s
+      done: 10/10 rotated | p1=219.53s p2=103.27s p3=152.03s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 75s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8738.05it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 9s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 60s
+      done: 10/10 rotated | p1=74.87s p2=8.71s p3=60.32s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 451s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9533.64it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 84s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 299s
+      done: 10/10 rotated | p1=450.61s p2=83.64s p3=299.4s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 274s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9621.95it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 32s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 187s
+      done: 10/10 rotated | p1=274.28s p2=32.41s p3=186.71s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 267s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9773.59it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 181s
+      done: 10/10 rotated | p1=267.18s p2=28.33s p3=181.45s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 244s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10519.29it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 34s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 166s
+      done: 10/10 rotated | p1=244.01s p2=34.3s p3=166.5s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10591.68it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 32s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 152s
+      done: 10/10 rotated | p1=219.57s p2=32.48s p3=151.86s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 221s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11046.18it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 152s
+      done: 10/10 rotated | p1=220.52s p2=27.76s p3=151.94s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10735.71it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 31s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 150s
+      done: 10/10 rotated | p1=220.33s p2=31.35s p3=150.19s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11721.36it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 151s
+      done: 10/10 rotated | p1=219.96s p2=28.04s p3=151.16s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/PP/<config_id>/composites/
+===================== SL =====================
+Discovering input volumes ...
+Found 740 volumes for ['SL']
+Experiments: 14 configs | animals=['SL'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 215s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9097.62it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 43s (model load 9s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=215.5s p2=43.18s p3=146.4s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 150s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8746.16it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 21s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=150.03s p2=21.16s p3=146.67s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 215s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10329.59it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 17s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=214.92s p2=16.61s p3=146.35s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 214s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 9411.95it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 55s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=213.78s p2=54.67s p3=145.75s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 214s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 9196.92it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 101s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=214.35s p2=101.34s p3=146.3s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 74s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8647.63it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 10s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 58s
+      done: 10/10 rotated | p1=73.61s p2=9.9s p3=58.16s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 445s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9325.78it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 82s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 288s
+      done: 10/10 rotated | p1=445.11s p2=81.54s p3=288.37s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 241s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9941.79it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 30s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 155s
+      done: 10/10 rotated | p1=240.78s p2=30.03s p3=154.89s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 215s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9653.96it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 32s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 144s
+      done: 10/10 rotated | p1=215.1s p2=31.64s p3=144.38s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 210s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10550.01it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 32s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 143s
+      done: 10/10 rotated | p1=210.28s p2=31.69s p3=142.87s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 213s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10319.84it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=213.42s p2=28.12s p3=145.87s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 215s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9757.64it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=214.71s p2=28.11s p3=146.71s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 215s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10724.65it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=215.13s p2=27.02s p3=146.81s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 214s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10495.34it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 30s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=213.96s p2=29.78s p3=147.26s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/SL/<config_id>/composites/
+===================== WO =====================
+Discovering input volumes ...
+Found 946 volumes for ['WO']
+Experiments: 14 configs | animals=['WO'] | workers=8
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO
+
+[1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10449.36it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 40s (model load 11s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=219.16s p2=39.82s p3=147.42s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/baseline/composites/
+[2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 153s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8883.20it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 20s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 148s
+      done: 10/10 rotated | p1=152.83s p2=20.05s p3=147.89s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/views=4/composites/
+[3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 217s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10017.86it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 17s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=217.23s p2=16.77s p3=147.19s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/model=small/composites/
+[4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 217s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10127.51it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 55s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=216.91s p2=54.89s p3=145.69s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/model=large/composites/
+[5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 217s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 14702.01it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 100s (model load 1s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=216.53s p2=99.85s p3=146.3s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/model=huge/composites/
+[6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 74s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8995.80it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 8s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 58s
+      done: 10/10 rotated | p1=74.33s p2=8.0s p3=58.1s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/grid=30/composites/
+[7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 446s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9336.31it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 78s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 293s
+      done: 10/10 rotated | p1=445.66s p2=78.37s p3=292.78s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/grid=90/composites/
+[8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 285s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10057.03it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 29s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 187s
+      done: 10/10 rotated | p1=284.6s p2=29.07s p3=187.07s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/threshold=96/composites/
+[9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 273s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10317.91it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 32s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 180s
+      done: 10/10 rotated | p1=272.98s p2=32.47s p3=180.44s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/threshold=97/composites/
+[10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 253s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10375.00it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 29s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 165s
+      done: 10/10 rotated | p1=253.36s p2=29.45s p3=165.42s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/threshold=98/composites/
+[11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 218s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10322.00it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 146s
+      done: 10/10 rotated | p1=217.97s p2=27.69s p3=146.36s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/top_k=3/composites/
+[12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 217s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10459.49it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=217.23s p2=27.77s p3=147.1s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/top_k=8/composites/
+[13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 217s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10830.57it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 29s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=217.2s p2=29.39s p3=147.0s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/anno_mode=1_image/composites/
+[14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 216s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10767.84it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 30s (model load 0s)
+   Pass 3/3: rotate + QA render 10 individuals on 8 workers
+   Pass 3 done in 147s
+      done: 10/10 rotated | p1=216.35s p2=29.93s p3=146.69s | check composites under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/anno_mode=1_animal/composites/
+
+Summary written to /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/summary.csv
+Composites for manual correctness counting are under /zhome/1c/0/216847/Desktop/fagprojekt/experiments/WO/<config_id>/composites/
+All species done.
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28642885: <insect_all> in cluster <dcc> Done
+
+Job <insect_all> was submitted from host <hpclogin1> by user <s246136> in cluster <dcc> at Sat Jun 13 05:23:33 2026
+Job was executed on host(s) <8*n-62-20-14>, in queue <gpuv100>, as user <s246136> in cluster <dcc> at Sat Jun 13 05:23:40 2026
+</zhome/1c/0/216847> was used as the home directory.
+</zhome/1c/0/216847/Desktop/fagprojekt> was used as the working directory.
+Started at Sat Jun 13 05:23:40 2026
+Terminated at Sun Jun 14 01:12:30 2026
+Results reported at Sun Jun 14 01:12:30 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+# DTU HPC (LSF / bsub) submit script: runs the experiment sweep for ALL species
+# in a single job, one species after another. Submit from the repo root:
+#
+#     bsub < run_experiments_lsf.sh
+#
+# All 12 species sequentially is long (~20 h on one GPU), so the walltime is 24 h.
+# Results are written per species and flushed after every config, so if the job
+# is killed or times out the finished species survive -- rerun only the rest with
+#     SPECIES_LIST="ML PP SL WO" bsub < run_experiments_lsf.sh
+# (To parallelise instead, submit one job per species; see the loop at the bottom
+#  of this comment.)
+
+#BSUB -J insect_all
+#BSUB -q gpuv100              # GPU queue (use your available GPU queue)
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -n 8                    # CPU cores -> ProcessPool workers (passes 1 & 3)
+#BSUB -R "rusage[mem=4GB]"    # PER CORE on DTU LSF -> 8 x 4 = 32 GB total
+#BSUB -R "span[hosts=1]"
+#BSUB -W 24:00                # walltime hh:mm (must be <= gpuv100 hard RUNLIMIT; check: bqueues -l gpuv100)
+#BSUB -o logs/experiments_%J.out
+#BSUB -e logs/experiments_%J.err
+
+set -euo pipefail
+PROJ=/zhome/1c/0/216847/Desktop/fagprojekt   # repo location on the cluster
+cd "$PROJ"
+mkdir -p logs
+
+# --- environment ----------------------------------------------------------
+# module load cuda/12.4         # adjust to a module that exists (module avail cuda)
+source "$PROJ/venv/bin/activate"
+export HF_HOME="$PROJ/hf_cache"
+export HF_HUB_OFFLINE=1
+
+# --- run ------------------------------------------------------------------
+# The BugNIST volumes already live on the shared project filesystem; point
+# --original straight at them (no copy needed). xvfb-run gives the offscreen VTK
+# renderer a virtual X display (compute nodes have no DISPLAY; without it the
+# renders come out blank). Each species writes to experiments/<SPECIES>/.
+DATA=/dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512
+SPECIES_LIST="${SPECIES_LIST:-AC BC BF BL BP CF GH MA ML PP SL WO}"
+
+for sp in $SPECIES_LIST; do
+    echo "===================== $sp ====================="
+    # '|| ...' so one bad species does not abort the whole job (set -e).
+    xvfb-run -a python run_experiments.py \
+        --original "$DATA" \
+        --results  "$PROJ/experiments/$sp" \
+        --animals  "$sp" \
+        --eval-range 11 20 \
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   513710.00 sec.
+    Max Memory :                                 5422 MB
+    Average Memory :                             3579.63 MB
+    Total Requested Memory :                     32768.00 MB
+    Delta Memory :                               27346.00 MB
+    Max Swap :                                   -
+    Max Processes :                              16
+    Max Threads :                                159
+    Run time :                                   71329 sec.
+    Turnaround time :                            71337 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <logs/experiments_28642885.err> for stderr output of this job.
+

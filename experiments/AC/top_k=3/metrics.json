@@ -1,0 +1,94 @@
+{
+  "id": "top_k=3",
+  "params": {
+    "id": "top_k=3",
+    "axis": "top_k",
+    "level": "3",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "otsu",
+    "top_k": 3,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 217.53381896601059,
+    "pass2_s": 28.071179841994308,
+    "load_s": 0.2096690370235592,
+    "pass3_s": 150.72742060699966
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "AC",
+      "individual": "bcrick_1_012",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 18
+    },
+    {
+      "animal": "AC",
+      "individual": "bcrick_1_017",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 18
+    },
+    {
+      "animal": "AC",
+      "individual": "bcrick_1_018",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 18
+    },
+    {
+      "animal": "AC",
+      "individual": "bcrick_1_013",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 18
+    },
+    {
+      "animal": "AC",
+      "individual": "bcrick_1_016",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 18
+    },
+    {
+      "animal": "AC",
+      "individual": "bcrick_1_015",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 18
+    },
+    {
+      "animal": "AC",
+      "individual": "bcrick_1_014",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 18
+    },
+    {
+      "animal": "AC",
+      "individual": "bcrick_1_011",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 18
+    },
+    {
+      "animal": "AC",
+      "individual": "bcrick_1_019",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 18
+    },
+    {
+      "animal": "AC",
+      "individual": "bcrick_1_020",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 18
+    }
+  ]
+}
