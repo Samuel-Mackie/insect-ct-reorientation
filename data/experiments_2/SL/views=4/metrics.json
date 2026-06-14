@@ -1,0 +1,94 @@
+{
+  "id": "views=4",
+  "params": {
+    "id": "views=4",
+    "axis": "views",
+    "level": "4",
+    "views": "4",
+    "model": "base",
+    "grid": 60,
+    "threshold": "otsu",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 49.1716848006472,
+    "pass2_s": 28.924423900432885,
+    "load_s": 6.396228100173175,
+    "pass3_s": 40.04575829952955
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "SL",
+      "individual": "soldat_10_011",
+      "status": "ok",
+      "n_inliers": 19,
+      "n_rays": 20
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_013",
+      "status": "ok",
+      "n_inliers": 16,
+      "n_rays": 20
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_015",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 20
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_012",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 20
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_016",
+      "status": "ok",
+      "n_inliers": 17,
+      "n_rays": 20
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_014",
+      "status": "ok",
+      "n_inliers": 16,
+      "n_rays": 20
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_017",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 20
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_019",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 20
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_018",
+      "status": "ok",
+      "n_inliers": 16,
+      "n_rays": 20
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_020",
+      "status": "ok",
+      "n_inliers": 15,
+      "n_rays": 20
+    }
+  ]
+}

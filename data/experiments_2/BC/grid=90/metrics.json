@@ -1,0 +1,94 @@
+{
+  "id": "grid=90",
+  "params": {
+    "id": "grid=90",
+    "axis": "grid",
+    "level": "90",
+    "views": "6",
+    "model": "base",
+    "grid": 90,
+    "threshold": "otsu",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 56.657801900058985,
+    "pass2_s": 116.74691160023212,
+    "load_s": 0.9612832004204392,
+    "pass3_s": 45.51224970072508
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_016",
+      "status": "ok",
+      "n_inliers": 29,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_015",
+      "status": "ok",
+      "n_inliers": 29,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_012",
+      "status": "ok",
+      "n_inliers": 29,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_013",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_011",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_014",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_017",
+      "status": "ok",
+      "n_inliers": 30,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_018",
+      "status": "ok",
+      "n_inliers": 22,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_019",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "BC",
+      "individual": "sfaar_1_020",
+      "status": "ok",
+      "n_inliers": 18,
+      "n_rays": 30
+    }
+  ]
+}

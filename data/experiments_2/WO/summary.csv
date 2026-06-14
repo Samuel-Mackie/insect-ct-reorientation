@@ -1,0 +1,2 @@
+id,axis,level,views,model,grid,threshold,top_k,anno_mode,n_individuals,n_ok,pass1_s,pass2_s,pass3_s,load_s,total_s,status
+views=4,views,4,4,base,60,otsu,5,5_animals,10,10,49.54,28.44,40.36,6.32,119.86,ok

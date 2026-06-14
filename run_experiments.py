@@ -227,8 +227,18 @@ def _rotate_worker(animal: str, individual: str, original_path: Path, info_path:
 
     # QA re-render of the rotated volume -> these PNGs become the composite.
     # Force the full 6 views so a 4-view config still yields a 6-panel image.
-    P.VIEWS = VIEWS_6
-    process_volume(out_tif, info_path / "final", info_path / "final_segmented")
+    # Pool workers are REUSED across individuals, so restore the config's VIEWS
+    # afterwards: otherwise the next individual on this worker would run
+    # build_rays_from_individual with VIEWS_6, and for the 4-view config (whose
+    # metadata labels are P1..P4) every angle lookup would miss -> zero rays ->
+    # skip_no_rays. This is why ~workers-worth of 4-view individuals passed and
+    # the rest silently failed.
+    cfg_views = P.VIEWS
+    try:
+        P.VIEWS = VIEWS_6
+        process_volume(out_tif, info_path / "final", info_path / "final_segmented")
+    finally:
+        P.VIEWS = cfg_views
     res["target_axis"] = target_axis
     return res
 

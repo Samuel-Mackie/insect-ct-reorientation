@@ -11,3 +11,4 @@ data/test_dinov3_test_base_model
 data/test_dinov3_parallel
 # Optional: keep structure files if needed
 # !data/**/.gitkeep
+experiments copy

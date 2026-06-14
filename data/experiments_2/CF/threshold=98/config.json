@@ -1,0 +1,11 @@
+{
+  "id": "threshold=98",
+  "axis": "threshold",
+  "level": "98",
+  "views": "6",
+  "model": "base",
+  "grid": 60,
+  "threshold": "98",
+  "top_k": 5,
+  "anno_mode": "5_animals"
+}
