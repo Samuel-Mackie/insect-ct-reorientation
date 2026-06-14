@@ -449,31 +449,63 @@ def build_rays_from_individual(segmented_root: Path, tokens_root: Path, animal: 
     return origins, dirs
 
 
-def ransac_fuse(origins: list, dirs: list, threshold: float, refine_iters: int):
-    def inliers_of(p: np.ndarray) -> list:
-        return [k for k in range(len(origins)) if point_ray_distance(p, origins[k], dirs[k]) <= threshold]
+def ransac_fuse(
+    origins: list,
+    dirs: list,
+    threshold: float,
+    refine_iters: int,
+) -> dict | None:
 
-    best = None
-    # Initial fit over all ray pairs
+    def inliers_of(p: np.ndarray) -> list:
+        return [
+            k for k in range(len(origins))
+            if point_ray_distance(p, origins[k], dirs[k]) <= threshold
+        ]
+
+    def ssd(p: np.ndarray, idxs: list) -> float:
+        # Sum of squared perpendicular distances over a set of rays.
+        return float(sum(point_ray_distance(p, origins[k], dirs[k]) ** 2 for k in idxs))
+
+    best = None  # (n_inliers, point, inliers, ssd_over_inliers)
+
+    # Initial fit over all valid ray pairs
     for i in range(len(origins)):
         for j in range(i + 1, len(origins)):
+            # Skip pairs from the same camera, and near (anti-)parallel pairs:
+            # both make the two-ray triangulation ill-conditioned (singular A).
             if np.array_equal(origins[i], origins[j]):
                 continue
+            if abs(float(np.dot(dirs[i], dirs[j]))) > 0.999:
+                continue
+
             p = triangulate_rays([origins[i], origins[j]], [dirs[i], dirs[j]])
             inliers = inliers_of(p)
-            if best is None or len(inliers) > best[0]:
-                best = (len(inliers), p, inliers)
+            n = len(inliers)
+            e = ssd(p, inliers)
 
-    if best is None:
+            # Most inliers wins; ties broken by smallest SSD over the inlier set.
+            if best is None or n > best[0] or (n == best[0] and e < best[3]):
+                best = (n, p, inliers, e)
+
+    if best is None or best[0] < 2:
+        if len(origins) >= 2:
+            p = triangulate_rays(origins, dirs)
+            inliers = list(range(len(origins)))
+            return {"point": p, "inliers": inliers,
+                    "n_inliers": len(inliers), "threshold": threshold}
         return None
 
-    # Refinement
-    _, p, inliers = best
+    # Refinement. Recompute the point from its inliers, repeat, early-stop on convergence).
+    _, p, inliers, _ = best
     for _ in range(max(0, refine_iters)):
         if len(inliers) < 2:
             break
         p = triangulate_rays([origins[k] for k in inliers], [dirs[k] for k in inliers])
-        inliers = inliers_of(p)
+        new_inliers = inliers_of(p)
+        if set(new_inliers) == set(inliers):
+            inliers = new_inliers
+            break  # converged: inlier set unchanged
+        inliers = new_inliers
 
     return {"point": p, "inliers": inliers, "n_inliers": len(inliers), "threshold": threshold}
 
