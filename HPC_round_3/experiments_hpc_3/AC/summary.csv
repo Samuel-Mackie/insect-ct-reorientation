@@ -1,0 +1,4 @@
+id,axis,level,views,model,grid,threshold,top_k,anno_mode,n_individuals,n_ok,pass1_s,pass2_s,pass3_s,load_s,total_s,status
+baseline,baseline,baseline,6,base,60,otsu,5,5_animals,10,10,223.08,97.14,151.43,63.82,475.21,ok
+threshold=99,threshold,99,6,base,60,99,5,5_animals,10,10,215.33,27.51,147.87,0.25,393.61,ok
+threshold=99.5,threshold,99.5,6,base,60,99.5,5,5_animals,10,10,213.75,27.01,147.48,0.22,391.36,ok
