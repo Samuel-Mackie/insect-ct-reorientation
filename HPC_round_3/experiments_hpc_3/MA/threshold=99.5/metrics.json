@@ -1,0 +1,94 @@
+{
+  "id": "threshold=99.5",
+  "params": {
+    "id": "threshold=99.5",
+    "axis": "threshold",
+    "level": "99.5",
+    "views": "6",
+    "model": "base",
+    "grid": 60,
+    "threshold": "99.5",
+    "top_k": 5,
+    "anno_mode": "5_animals"
+  },
+  "timings": {
+    "pass1_s": 203.74799994006753,
+    "pass2_s": 24.38254709006287,
+    "load_s": 0.23638303694315255,
+    "pass3_s": 147.3579439658206
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "per_individual": [
+    {
+      "animal": "MA",
+      "individual": "maddi_1_013",
+      "status": "ok",
+      "n_inliers": 22,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_018",
+      "status": "ok",
+      "n_inliers": 24,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_015",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_016",
+      "status": "ok",
+      "n_inliers": 26,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_012",
+      "status": "ok",
+      "n_inliers": 21,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_014",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_017",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_011",
+      "status": "ok",
+      "n_inliers": 25,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_020",
+      "status": "ok",
+      "n_inliers": 16,
+      "n_rays": 30
+    },
+    {
+      "animal": "MA",
+      "individual": "maddi_1_019",
+      "status": "ok",
+      "n_inliers": 23,
+      "n_rays": 30
+    }
+  ]
+}
