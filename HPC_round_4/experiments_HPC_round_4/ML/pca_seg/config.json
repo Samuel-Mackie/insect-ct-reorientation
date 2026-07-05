@@ -1,0 +1,15 @@
+{
+  "id": "pca_seg",
+  "method": "segment + PCA principal axis + Rodrigues (axis alignment only)",
+  "segmentation": "otsu / largest connected component (pipeline default)",
+  "head_tail_direction": "NOT resolved -- expect ~50% head-down; manual count",
+  "views": 6,
+  "grid": 60,
+  "eval_range": [
+    11,
+    20
+  ],
+  "animals": [
+    "ML"
+  ]
+}

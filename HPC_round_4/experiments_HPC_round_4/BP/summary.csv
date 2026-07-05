@@ -1,0 +1,2 @@
+id,axis,level,views,model,grid,threshold,top_k,anno_mode,n_individuals,n_ok,pass1_s,pass2_s,pass3_s,load_s,total_s,status
+pca_seg,method,pca_seg,6,none,60,otsu,,,10,10,19.04,0.08,172.49,0.0,193.86,ok

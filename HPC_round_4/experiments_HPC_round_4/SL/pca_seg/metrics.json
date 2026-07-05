@@ -1,0 +1,129 @@
+{
+  "id": "pca_seg",
+  "params": {
+    "id": "pca_seg",
+    "method": "segment + PCA principal axis + Rodrigues (axis alignment only)",
+    "segmentation": "otsu / largest connected component (pipeline default)",
+    "head_tail_direction": "NOT resolved -- expect ~50% head-down; manual count",
+    "views": 6,
+    "grid": 60,
+    "eval_range": [
+      11,
+      20
+    ],
+    "animals": [
+      "SL"
+    ]
+  },
+  "timings": {
+    "pass1_s": 19.964834718964994,
+    "pass2_s": 0.3269610160496086,
+    "pass3_s": 167.5661816408392,
+    "load_s": 0.0
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "note": "n_ok = produced a rotated output; head-UP correctness is manual (see composites). ~50% may be head-down (no head/tail direction). pass1_s=segment, pass2_s=PCA, pass3_s=rotate+QA-render, load_s=0.",
+  "per_individual": [
+    {
+      "animal": "SL",
+      "individual": "soldat_10_015",
+      "status": "ok",
+      "n_voxels": 889228,
+      "elongation": 8.597,
+      "target_axis": "+Z",
+      "seg_s": 7.902,
+      "rotate_s": 3.981
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_016",
+      "status": "ok",
+      "n_voxels": 1762262,
+      "elongation": 9.109,
+      "target_axis": "+Z",
+      "seg_s": 8.272,
+      "rotate_s": 5.136
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_017",
+      "status": "ok",
+      "n_voxels": 1528344,
+      "elongation": 10.972,
+      "target_axis": "+Z",
+      "seg_s": 8.298,
+      "rotate_s": 5.155
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_014",
+      "status": "ok",
+      "n_voxels": 1256087,
+      "elongation": 13.907,
+      "target_axis": "+Z",
+      "seg_s": 8.454,
+      "rotate_s": 5.377
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_013",
+      "status": "ok",
+      "n_voxels": 1044958,
+      "elongation": 8.972,
+      "target_axis": "+Z",
+      "seg_s": 8.476,
+      "rotate_s": 4.383
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_018",
+      "status": "ok",
+      "n_voxels": 1374248,
+      "elongation": 8.814,
+      "target_axis": "+Z",
+      "seg_s": 8.474,
+      "rotate_s": 4.403
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_012",
+      "status": "ok",
+      "n_voxels": 1849550,
+      "elongation": 6.931,
+      "target_axis": "+Z",
+      "seg_s": 8.472,
+      "rotate_s": 5.811
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_011",
+      "status": "ok",
+      "n_voxels": 1947481,
+      "elongation": 10.356,
+      "target_axis": "+Z",
+      "seg_s": 8.646,
+      "rotate_s": 5.649
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_019",
+      "status": "ok",
+      "n_voxels": 1784482,
+      "elongation": 5.777,
+      "target_axis": "+Z",
+      "seg_s": 7.593,
+      "rotate_s": 9.445
+    },
+    {
+      "animal": "SL",
+      "individual": "soldat_10_020",
+      "status": "ok",
+      "n_voxels": 1238380,
+      "elongation": 10.258,
+      "target_axis": "+Z",
+      "seg_s": 8.295,
+      "rotate_s": 9.061
+    }
+  ]
+}

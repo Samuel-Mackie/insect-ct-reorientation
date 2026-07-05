@@ -1,0 +1,129 @@
+{
+  "id": "pca_seg",
+  "params": {
+    "id": "pca_seg",
+    "method": "segment + PCA principal axis + Rodrigues (axis alignment only)",
+    "segmentation": "otsu / largest connected component (pipeline default)",
+    "head_tail_direction": "NOT resolved -- expect ~50% head-down; manual count",
+    "views": 6,
+    "grid": 60,
+    "eval_range": [
+      11,
+      20
+    ],
+    "animals": [
+      "GH"
+    ]
+  },
+  "timings": {
+    "pass1_s": 19.731732967076823,
+    "pass2_s": 0.25693900417536497,
+    "pass3_s": 168.45145353209227,
+    "load_s": 0.0
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "note": "n_ok = produced a rotated output; head-UP correctness is manual (see composites). ~50% may be head-down (no head/tail direction). pass1_s=segment, pass2_s=PCA, pass3_s=rotate+QA-render, load_s=0.",
+  "per_individual": [
+    {
+      "animal": "GH",
+      "individual": "gras_1_015",
+      "status": "ok",
+      "n_voxels": 1049662,
+      "elongation": 4.534,
+      "target_axis": "+Z",
+      "seg_s": 8.131,
+      "rotate_s": 4.281
+    },
+    {
+      "animal": "GH",
+      "individual": "gras_1_018",
+      "status": "ok",
+      "n_voxels": 1045273,
+      "elongation": 3.439,
+      "target_axis": "+Z",
+      "seg_s": 8.154,
+      "rotate_s": 5.514
+    },
+    {
+      "animal": "GH",
+      "individual": "gras_1_012",
+      "status": "ok",
+      "n_voxels": 1174933,
+      "elongation": 4.395,
+      "target_axis": "+Z",
+      "seg_s": 8.167,
+      "rotate_s": 4.517
+    },
+    {
+      "animal": "GH",
+      "individual": "gras_1_017",
+      "status": "ok",
+      "n_voxels": 1280385,
+      "elongation": 4.845,
+      "target_axis": "+Z",
+      "seg_s": 8.206,
+      "rotate_s": 4.187
+    },
+    {
+      "animal": "GH",
+      "individual": "gras_1_014",
+      "status": "ok",
+      "n_voxels": 1213635,
+      "elongation": 6.524,
+      "target_axis": "+Z",
+      "seg_s": 8.734,
+      "rotate_s": 3.928
+    },
+    {
+      "animal": "GH",
+      "individual": "gras_1_013",
+      "status": "ok",
+      "n_voxels": 1381085,
+      "elongation": 4.842,
+      "target_axis": "+Z",
+      "seg_s": 8.836,
+      "rotate_s": 4.944
+    },
+    {
+      "animal": "GH",
+      "individual": "gras_1_011",
+      "status": "ok",
+      "n_voxels": 1128945,
+      "elongation": 7.116,
+      "target_axis": "+Z",
+      "seg_s": 9.025,
+      "rotate_s": 4.437
+    },
+    {
+      "animal": "GH",
+      "individual": "gras_1_016",
+      "status": "ok",
+      "n_voxels": 1202042,
+      "elongation": 3.259,
+      "target_axis": "+Z",
+      "seg_s": 9.345,
+      "rotate_s": 4.671
+    },
+    {
+      "animal": "GH",
+      "individual": "gras_1_019",
+      "status": "ok",
+      "n_voxels": 1014232,
+      "elongation": 4.479,
+      "target_axis": "+Z",
+      "seg_s": 8.155,
+      "rotate_s": 5.738
+    },
+    {
+      "animal": "GH",
+      "individual": "gras_1_020",
+      "status": "ok",
+      "n_voxels": 928028,
+      "elongation": 10.526,
+      "target_axis": "+Z",
+      "seg_s": 8.163,
+      "rotate_s": 4.799
+    }
+  ]
+}

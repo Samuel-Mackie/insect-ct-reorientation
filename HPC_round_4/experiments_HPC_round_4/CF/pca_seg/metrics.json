@@ -1,0 +1,129 @@
+{
+  "id": "pca_seg",
+  "params": {
+    "id": "pca_seg",
+    "method": "segment + PCA principal axis + Rodrigues (axis alignment only)",
+    "segmentation": "otsu / largest connected component (pipeline default)",
+    "head_tail_direction": "NOT resolved -- expect ~50% head-down; manual count",
+    "views": 6,
+    "grid": 60,
+    "eval_range": [
+      11,
+      20
+    ],
+    "animals": [
+      "CF"
+    ]
+  },
+  "timings": {
+    "pass1_s": 20.166731051867828,
+    "pass2_s": 0.06534213502891362,
+    "pass3_s": 170.23861973406747,
+    "load_s": 0.0
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "note": "n_ok = produced a rotated output; head-UP correctness is manual (see composites). ~50% may be head-down (no head/tail direction). pass1_s=segment, pass2_s=PCA, pass3_s=rotate+QA-render, load_s=0.",
+  "per_individual": [
+    {
+      "animal": "CF",
+      "individual": "krol_1_016",
+      "status": "ok",
+      "n_voxels": 261511,
+      "elongation": 2.334,
+      "target_axis": "+Z",
+      "seg_s": 7.676,
+      "rotate_s": 4.436
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_018",
+      "status": "ok",
+      "n_voxels": 250653,
+      "elongation": 6.397,
+      "target_axis": "+Z",
+      "seg_s": 8.433,
+      "rotate_s": 5.102
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_013",
+      "status": "ok",
+      "n_voxels": 218313,
+      "elongation": 3.989,
+      "target_axis": "+Z",
+      "seg_s": 8.547,
+      "rotate_s": 4.235
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_012",
+      "status": "ok",
+      "n_voxels": 269239,
+      "elongation": 6.966,
+      "target_axis": "+Z",
+      "seg_s": 8.718,
+      "rotate_s": 5.878
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_011",
+      "status": "ok",
+      "n_voxels": 281988,
+      "elongation": 3.567,
+      "target_axis": "+Z",
+      "seg_s": 8.782,
+      "rotate_s": 5.025
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_017",
+      "status": "ok",
+      "n_voxels": 220081,
+      "elongation": 3.092,
+      "target_axis": "+Z",
+      "seg_s": 8.834,
+      "rotate_s": 6.36
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_015",
+      "status": "ok",
+      "n_voxels": 304860,
+      "elongation": 6.057,
+      "target_axis": "+Z",
+      "seg_s": 8.852,
+      "rotate_s": 5.262
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_014",
+      "status": "ok",
+      "n_voxels": 219610,
+      "elongation": 3.991,
+      "target_axis": "+Z",
+      "seg_s": 9.01,
+      "rotate_s": 4.737
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_019",
+      "status": "ok",
+      "n_voxels": 270291,
+      "elongation": 5.651,
+      "target_axis": "+Z",
+      "seg_s": 7.934,
+      "rotate_s": 7.953
+    },
+    {
+      "animal": "CF",
+      "individual": "krol_1_020",
+      "status": "ok",
+      "n_voxels": 248930,
+      "elongation": 3.661,
+      "target_axis": "+Z",
+      "seg_s": 8.713,
+      "rotate_s": 8.148
+    }
+  ]
+}

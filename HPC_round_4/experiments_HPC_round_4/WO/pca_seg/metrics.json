@@ -1,0 +1,129 @@
+{
+  "id": "pca_seg",
+  "params": {
+    "id": "pca_seg",
+    "method": "segment + PCA principal axis + Rodrigues (axis alignment only)",
+    "segmentation": "otsu / largest connected component (pipeline default)",
+    "head_tail_direction": "NOT resolved -- expect ~50% head-down; manual count",
+    "views": 6,
+    "grid": 60,
+    "eval_range": [
+      11,
+      20
+    ],
+    "animals": [
+      "WO"
+    ]
+  },
+  "timings": {
+    "pass1_s": 19.58941122307442,
+    "pass2_s": 0.13891063001938164,
+    "pass3_s": 166.4519406540785,
+    "load_s": 0.0
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "note": "n_ok = produced a rotated output; head-UP correctness is manual (see composites). ~50% may be head-down (no head/tail direction). pass1_s=segment, pass2_s=PCA, pass3_s=rotate+QA-render, load_s=0.",
+  "per_individual": [
+    {
+      "animal": "WO",
+      "individual": "bank_1_011",
+      "status": "ok",
+      "n_voxels": 492588,
+      "elongation": 5.001,
+      "target_axis": "+Z",
+      "seg_s": 8.004,
+      "rotate_s": 3.417
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_015",
+      "status": "ok",
+      "n_voxels": 446621,
+      "elongation": 3.927,
+      "target_axis": "+Z",
+      "seg_s": 8.395,
+      "rotate_s": 2.524
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_014",
+      "status": "ok",
+      "n_voxels": 513230,
+      "elongation": 3.61,
+      "target_axis": "+Z",
+      "seg_s": 8.398,
+      "rotate_s": 3.039
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_013",
+      "status": "ok",
+      "n_voxels": 591124,
+      "elongation": 3.61,
+      "target_axis": "+Z",
+      "seg_s": 8.396,
+      "rotate_s": 3.647
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_017",
+      "status": "ok",
+      "n_voxels": 733931,
+      "elongation": 3.962,
+      "target_axis": "+Z",
+      "seg_s": 8.463,
+      "rotate_s": 5.552
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_012",
+      "status": "ok",
+      "n_voxels": 446996,
+      "elongation": 4.703,
+      "target_axis": "+Z",
+      "seg_s": 8.698,
+      "rotate_s": 3.662
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_016",
+      "status": "ok",
+      "n_voxels": 742606,
+      "elongation": 3.801,
+      "target_axis": "+Z",
+      "seg_s": 8.766,
+      "rotate_s": 3.051
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_018",
+      "status": "ok",
+      "n_voxels": 621979,
+      "elongation": 5.112,
+      "target_axis": "+Z",
+      "seg_s": 8.819,
+      "rotate_s": 3.731
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_019",
+      "status": "ok",
+      "n_voxels": 538681,
+      "elongation": 4.53,
+      "target_axis": "+Z",
+      "seg_s": 8.009,
+      "rotate_s": 8.398
+    },
+    {
+      "animal": "WO",
+      "individual": "bank_1_020",
+      "status": "ok",
+      "n_voxels": 511246,
+      "elongation": 4.415,
+      "target_axis": "+Z",
+      "seg_s": 7.879,
+      "rotate_s": 6.422
+    }
+  ]
+}

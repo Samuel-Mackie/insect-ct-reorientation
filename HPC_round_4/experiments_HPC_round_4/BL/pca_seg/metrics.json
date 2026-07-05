@@ -1,0 +1,129 @@
+{
+  "id": "pca_seg",
+  "params": {
+    "id": "pca_seg",
+    "method": "segment + PCA principal axis + Rodrigues (axis alignment only)",
+    "segmentation": "otsu / largest connected component (pipeline default)",
+    "head_tail_direction": "NOT resolved -- expect ~50% head-down; manual count",
+    "views": 6,
+    "grid": 60,
+    "eval_range": [
+      11,
+      20
+    ],
+    "animals": [
+      "BL"
+    ]
+  },
+  "timings": {
+    "pass1_s": 19.440913191996515,
+    "pass2_s": 0.07809709082357585,
+    "pass3_s": 171.57869670307264,
+    "load_s": 0.0
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "note": "n_ok = produced a rotated output; head-UP correctness is manual (see composites). ~50% may be head-down (no head/tail direction). pass1_s=segment, pass2_s=PCA, pass3_s=rotate+QA-render, load_s=0.",
+  "per_individual": [
+    {
+      "animal": "BL",
+      "individual": "boffel_1_015",
+      "status": "ok",
+      "n_voxels": 115712,
+      "elongation": 10.302,
+      "target_axis": "+Z",
+      "seg_s": 8.26,
+      "rotate_s": 3.491
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_018",
+      "status": "ok",
+      "n_voxels": 288101,
+      "elongation": 15.958,
+      "target_axis": "+Z",
+      "seg_s": 8.556,
+      "rotate_s": 4.301
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_014",
+      "status": "ok",
+      "n_voxels": 408633,
+      "elongation": 16.839,
+      "target_axis": "+Z",
+      "seg_s": 8.666,
+      "rotate_s": 5.534
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_016",
+      "status": "ok",
+      "n_voxels": 283260,
+      "elongation": 19.79,
+      "target_axis": "+Z",
+      "seg_s": 8.806,
+      "rotate_s": 4.167
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_017",
+      "status": "ok",
+      "n_voxels": 357597,
+      "elongation": 19.208,
+      "target_axis": "+Z",
+      "seg_s": 9.16,
+      "rotate_s": 4.574
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_013",
+      "status": "ok",
+      "n_voxels": 416765,
+      "elongation": 14.867,
+      "target_axis": "+Z",
+      "seg_s": 9.258,
+      "rotate_s": 4.368
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_012",
+      "status": "ok",
+      "n_voxels": 343863,
+      "elongation": 16.965,
+      "target_axis": "+Z",
+      "seg_s": 9.308,
+      "rotate_s": 4.812
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_011",
+      "status": "ok",
+      "n_voxels": 349800,
+      "elongation": 15.713,
+      "target_axis": "+Z",
+      "seg_s": 9.34,
+      "rotate_s": 4.367
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_020",
+      "status": "ok",
+      "n_voxels": 268875,
+      "elongation": 14.574,
+      "target_axis": "+Z",
+      "seg_s": 7.716,
+      "rotate_s": 5.841
+    },
+    {
+      "animal": "BL",
+      "individual": "boffel_1_019",
+      "status": "ok",
+      "n_voxels": 86165,
+      "elongation": 18.814,
+      "target_axis": "+Z",
+      "seg_s": 8.155,
+      "rotate_s": 4.196
+    }
+  ]
+}

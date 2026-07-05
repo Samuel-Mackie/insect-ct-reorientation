@@ -1,0 +1,129 @@
+{
+  "id": "pca_seg",
+  "params": {
+    "id": "pca_seg",
+    "method": "segment + PCA principal axis + Rodrigues (axis alignment only)",
+    "segmentation": "otsu / largest connected component (pipeline default)",
+    "head_tail_direction": "NOT resolved -- expect ~50% head-down; manual count",
+    "views": 6,
+    "grid": 60,
+    "eval_range": [
+      11,
+      20
+    ],
+    "animals": [
+      "BP"
+    ]
+  },
+  "timings": {
+    "pass1_s": 19.043856895994395,
+    "pass2_s": 0.07820989703759551,
+    "pass3_s": 172.49359152000397,
+    "load_s": 0.0
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "note": "n_ok = produced a rotated output; head-UP correctness is manual (see composites). ~50% may be head-down (no head/tail direction). pass1_s=segment, pass2_s=PCA, pass3_s=rotate+QA-render, load_s=0.",
+  "per_individual": [
+    {
+      "animal": "BP",
+      "individual": "guld_1_018",
+      "status": "ok",
+      "n_voxels": 419511,
+      "elongation": 8.834,
+      "target_axis": "+Z",
+      "seg_s": 8.232,
+      "rotate_s": 4.34
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_015",
+      "status": "ok",
+      "n_voxels": 385729,
+      "elongation": 8.314,
+      "target_axis": "+Z",
+      "seg_s": 8.372,
+      "rotate_s": 4.345
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_012",
+      "status": "ok",
+      "n_voxels": 493370,
+      "elongation": 7.463,
+      "target_axis": "+Z",
+      "seg_s": 8.514,
+      "rotate_s": 4.54
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_013",
+      "status": "ok",
+      "n_voxels": 322789,
+      "elongation": 7.092,
+      "target_axis": "+Z",
+      "seg_s": 8.556,
+      "rotate_s": 3.916
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_014",
+      "status": "ok",
+      "n_voxels": 409711,
+      "elongation": 6.968,
+      "target_axis": "+Z",
+      "seg_s": 8.578,
+      "rotate_s": 4.341
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_017",
+      "status": "ok",
+      "n_voxels": 427315,
+      "elongation": 4.466,
+      "target_axis": "+Z",
+      "seg_s": 9.239,
+      "rotate_s": 5.349
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_011",
+      "status": "ok",
+      "n_voxels": 354018,
+      "elongation": 6.921,
+      "target_axis": "+Z",
+      "seg_s": 9.347,
+      "rotate_s": 3.814
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_016",
+      "status": "ok",
+      "n_voxels": 391335,
+      "elongation": 6.943,
+      "target_axis": "+Z",
+      "seg_s": 9.433,
+      "rotate_s": 3.633
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_019",
+      "status": "ok",
+      "n_voxels": 220093,
+      "elongation": 6.404,
+      "target_axis": "+Z",
+      "seg_s": 7.621,
+      "rotate_s": 6.548
+    },
+    {
+      "animal": "BP",
+      "individual": "guld_1_020",
+      "status": "ok",
+      "n_voxels": 331277,
+      "elongation": 8.082,
+      "target_axis": "+Z",
+      "seg_s": 7.591,
+      "rotate_s": 6.601
+    }
+  ]
+}

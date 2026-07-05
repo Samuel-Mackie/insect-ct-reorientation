@@ -1,0 +1,129 @@
+{
+  "id": "pca_seg",
+  "params": {
+    "id": "pca_seg",
+    "method": "segment + PCA principal axis + Rodrigues (axis alignment only)",
+    "segmentation": "otsu / largest connected component (pipeline default)",
+    "head_tail_direction": "NOT resolved -- expect ~50% head-down; manual count",
+    "views": 6,
+    "grid": 60,
+    "eval_range": [
+      11,
+      20
+    ],
+    "animals": [
+      "ML"
+    ]
+  },
+  "timings": {
+    "pass1_s": 19.492874478921294,
+    "pass2_s": 0.21192725305445492,
+    "pass3_s": 167.8457804650534,
+    "load_s": 0.0
+  },
+  "n_individuals": 10,
+  "n_ok": 10,
+  "note": "n_ok = produced a rotated output; head-UP correctness is manual (see composites). ~50% may be head-down (no head/tail direction). pass1_s=segment, pass2_s=PCA, pass3_s=rotate+QA-render, load_s=0.",
+  "per_individual": [
+    {
+      "animal": "ML",
+      "individual": "mel_10_013",
+      "status": "ok",
+      "n_voxels": 849197,
+      "elongation": 22.177,
+      "target_axis": "+Z",
+      "seg_s": 7.936,
+      "rotate_s": 5.575
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_011",
+      "status": "ok",
+      "n_voxels": 969691,
+      "elongation": 22.408,
+      "target_axis": "+Z",
+      "seg_s": 8.094,
+      "rotate_s": 5.125
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_016",
+      "status": "ok",
+      "n_voxels": 730258,
+      "elongation": 24.54,
+      "target_axis": "+Z",
+      "seg_s": 8.155,
+      "rotate_s": 4.245
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_015",
+      "status": "ok",
+      "n_voxels": 890925,
+      "elongation": 21.853,
+      "target_axis": "+Z",
+      "seg_s": 8.261,
+      "rotate_s": 5.113
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_012",
+      "status": "ok",
+      "n_voxels": 900499,
+      "elongation": 20.669,
+      "target_axis": "+Z",
+      "seg_s": 8.458,
+      "rotate_s": 5.168
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_014",
+      "status": "ok",
+      "n_voxels": 1015975,
+      "elongation": 19.213,
+      "target_axis": "+Z",
+      "seg_s": 8.554,
+      "rotate_s": 4.928
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_017",
+      "status": "ok",
+      "n_voxels": 1042715,
+      "elongation": 41.21,
+      "target_axis": "+Z",
+      "seg_s": 8.833,
+      "rotate_s": 5.339
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_018",
+      "status": "ok",
+      "n_voxels": 788181,
+      "elongation": 26.647,
+      "target_axis": "+Z",
+      "seg_s": 8.924,
+      "rotate_s": 4.096
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_019",
+      "status": "ok",
+      "n_voxels": 818579,
+      "elongation": 24.218,
+      "target_axis": "+Z",
+      "seg_s": 7.609,
+      "rotate_s": 11.38
+    },
+    {
+      "animal": "ML",
+      "individual": "mel_10_020",
+      "status": "ok",
+      "n_voxels": 984802,
+      "elongation": 28.361,
+      "target_axis": "+Z",
+      "seg_s": 8.013,
+      "rotate_s": 11.741
+    }
+  ]
+}
