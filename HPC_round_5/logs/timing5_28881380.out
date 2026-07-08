@@ -1,0 +1,2159 @@
+===================== AC =====================
+Discovering input volumes ...
+Found 724 volumes for ['AC'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/AC  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 210s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights:   5%|▌         | 11/211 [00:00<00:02, 96.19it/s]Loading weights:  10%|▉         | 21/211 [00:00<00:03, 53.72it/s]Loading weights:  13%|█▎        | 28/211 [00:00<00:03, 54.77it/s]Loading weights:  17%|█▋        | 35/211 [00:00<00:03, 50.32it/s]Loading weights:  26%|██▌       | 54/211 [00:00<00:01, 82.13it/s]Loading weights:  30%|███       | 64/211 [00:00<00:02, 66.31it/s]Loading weights:  34%|███▍      | 72/211 [00:01<00:02, 60.13it/s]Loading weights:  41%|████      | 87/211 [00:01<00:01, 76.58it/s]Loading weights:  47%|████▋     | 100/211 [00:01<00:01, 83.64it/s]Loading weights:  55%|█████▌    | 117/211 [00:01<00:00, 96.51it/s]Loading weights:  61%|██████    | 128/211 [00:01<00:01, 79.12it/s]Loading weights:  71%|███████   | 150/211 [00:01<00:00, 107.65it/s]Loading weights: 100%|██████████| 211/211 [00:01<00:00, 109.36it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 133s (model load 101s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=209.67s p2=133.28s p3=10.06s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 153s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 15773.96it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 17s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=152.67s p2=16.94s p3=10.2s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 205s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights:   7%|▋         | 14/211 [00:00<00:01, 119.96it/s]Loading weights:  14%|█▎        | 29/211 [00:00<00:01, 116.38it/s]Loading weights:  19%|█▉        | 41/211 [00:00<00:01, 103.99it/s]Loading weights:  25%|██▍       | 52/211 [00:00<00:01, 98.61it/s] Loading weights:  30%|██▉       | 63/211 [00:00<00:01, 91.86it/s]Loading weights:  40%|███▉      | 84/211 [00:00<00:01, 121.76it/s]Loading weights:  46%|████▌     | 97/211 [00:00<00:01, 92.11it/s] Loading weights:  51%|█████     | 108/211 [00:01<00:01, 86.35it/s]Loading weights:  56%|█████▌    | 118/211 [00:01<00:01, 84.19it/s]Loading weights:  60%|██████    | 127/211 [00:01<00:01, 81.10it/s]Loading weights: 100%|██████████| 211/211 [00:01<00:00, 146.71it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 19s (model load 3s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=204.67s p2=18.85s p3=10.0s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights:   1%|          | 5/415 [00:00<00:08, 48.34it/s]Loading weights:   3%|▎         | 11/415 [00:00<00:08, 48.83it/s]Loading weights:   4%|▍         | 18/415 [00:00<00:07, 51.28it/s]Loading weights:   6%|▌         | 24/415 [00:00<00:11, 33.84it/s]Loading weights:   7%|▋         | 28/415 [00:00<00:11, 34.13it/s]Loading weights:  11%|█         | 46/415 [00:00<00:05, 64.53it/s]Loading weights:  13%|█▎        | 54/415 [00:01<00:06, 54.57it/s]Loading weights:  15%|█▌        | 63/415 [00:01<00:06, 55.64it/s]Loading weights:  18%|█▊        | 73/415 [00:01<00:05, 60.89it/s]Loading weights:  21%|██        | 86/415 [00:01<00:04, 73.05it/s]Loading weights:  24%|██▍       | 101/415 [00:01<00:03, 86.41it/s]Loading weights:  27%|██▋       | 111/415 [00:01<00:03, 86.73it/s]Loading weights:  29%|██▉       | 122/415 [00:01<00:03, 87.33it/s]Loading weights:  32%|███▏      | 131/415 [00:02<00:04, 70.91it/s]Loading weights:  34%|███▍      | 142/415 [00:02<00:03, 76.04it/s]Loading weights:  37%|███▋      | 152/415 [00:02<00:03, 81.66it/s]Loading weights:  40%|████      | 166/415 [00:02<00:02, 87.55it/s]Loading weights:  42%|████▏     | 176/415 [00:02<00:03, 78.13it/s]Loading weights:  45%|████▍     | 186/415 [00:02<00:03, 75.50it/s]Loading weights:  47%|████▋     | 195/415 [00:02<00:02, 76.82it/s]Loading weights:  49%|████▉     | 203/415 [00:02<00:03, 67.94it/s]Loading weights:  51%|█████     | 211/415 [00:03<00:02, 68.42it/s]Loading weights:  53%|█████▎    | 219/415 [00:03<00:02, 66.50it/s]Loading weights:  54%|█████▍    | 226/415 [00:03<00:03, 58.88it/s]Loading weights:  58%|█████▊    | 241/415 [00:03<00:02, 76.87it/s]Loading weights:  60%|██████    | 250/415 [00:03<00:02, 71.12it/s]Loading weights:  64%|██████▍   | 266/415 [00:03<00:01, 91.22it/s]Loading weights: 100%|██████████| 415/415 [00:03<00:00, 107.61it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 82s (model load 33s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=207.6s p2=81.68s p3=9.87s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 207s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights:   1%|          | 5/615 [00:00<00:13, 45.02it/s]Loading weights:   2%|▏         | 10/615 [00:00<00:14, 42.67it/s]Loading weights:   2%|▏         | 15/615 [00:00<00:21, 27.96it/s]Loading weights:   3%|▎         | 21/615 [00:00<00:17, 34.17it/s]Loading weights:   4%|▍         | 27/615 [00:00<00:16, 36.08it/s]Loading weights:   5%|▌         | 31/615 [00:00<00:16, 36.02it/s]Loading weights:   6%|▌         | 35/615 [00:01<00:18, 31.55it/s]Loading weights:   6%|▋         | 39/615 [00:01<00:18, 31.91it/s]Loading weights:   7%|▋         | 45/615 [00:01<00:19, 29.97it/s]Loading weights:   8%|▊         | 51/615 [00:01<00:16, 34.50it/s]Loading weights:  10%|▉         | 60/615 [00:01<00:12, 43.83it/s]Loading weights:  11%|█         | 68/615 [00:01<00:10, 51.46it/s]Loading weights:  13%|█▎        | 81/615 [00:01<00:07, 67.70it/s]Loading weights:  14%|█▍        | 89/615 [00:02<00:10, 49.15it/s]Loading weights:  15%|█▌        | 95/615 [00:02<00:11, 43.54it/s]Loading weights:  17%|█▋        | 102/615 [00:02<00:10, 47.55it/s]Loading weights:  18%|█▊        | 112/615 [00:02<00:09, 54.56it/s]Loading weights:  20%|█▉        | 120/615 [00:02<00:08, 58.87it/s]Loading weights:  21%|██        | 129/615 [00:02<00:07, 61.36it/s]Loading weights:  22%|██▏       | 137/615 [00:02<00:07, 64.15it/s]Loading weights:  23%|██▎       | 144/615 [00:03<00:08, 54.21it/s]Loading weights:  24%|██▍       | 150/615 [00:03<00:08, 52.40it/s]Loading weights:  25%|██▌       | 156/615 [00:03<00:09, 48.19it/s]Loading weights:  26%|██▋       | 162/615 [00:03<00:09, 47.58it/s]Loading weights:  27%|██▋       | 168/615 [00:03<00:09, 47.85it/s]Loading weights:  28%|██▊       | 173/615 [00:03<00:12, 34.52it/s]Loading weights:  30%|██▉       | 184/615 [00:04<00:09, 47.82it/s]Loading weights:  31%|███       | 190/615 [00:04<00:10, 40.56it/s]Loading weights:  32%|███▏      | 199/615 [00:04<00:09, 41.76it/s]Loading weights:  33%|███▎      | 204/615 [00:04<00:10, 38.59it/s]Loading weights:  34%|███▍      | 209/615 [00:04<00:10, 37.90it/s]Loading weights:  36%|███▌      | 219/615 [00:04<00:09, 40.16it/s]Loading weights:  36%|███▋      | 224/615 [00:05<00:09, 39.76it/s]Loading weights:  37%|███▋      | 230/615 [00:05<00:08, 43.40it/s]Loading weights:  38%|███▊      | 235/615 [00:05<00:08, 43.69it/s]Loading weights:  39%|███▉      | 240/615 [00:05<00:08, 41.78it/s]Loading weights:  41%|████      | 251/615 [00:05<00:07, 51.37it/s]Loading weights:  42%|████▏     | 258/615 [00:05<00:06, 54.15it/s]Loading weights:  43%|████▎     | 267/615 [00:05<00:05, 60.24it/s]Loading weights:  45%|████▍     | 274/615 [00:06<00:07, 43.29it/s]Loading weights:  46%|████▌     | 280/615 [00:06<00:08, 41.24it/s]Loading weights:  47%|████▋     | 291/615 [00:06<00:06, 51.03it/s]Loading weights:  48%|████▊     | 297/615 [00:06<00:06, 50.01it/s]Loading weights:  49%|████▉     | 303/615 [00:06<00:05, 52.18it/s]Loading weights:  50%|█████     | 309/615 [00:06<00:08, 37.12it/s]Loading weights:  52%|█████▏    | 319/615 [00:07<00:06, 48.66it/s]Loading weights:  53%|█████▎    | 326/615 [00:07<00:05, 48.29it/s]Loading weights:  54%|█████▍    | 335/615 [00:07<00:05, 54.43it/s]Loading weights:  56%|█████▌    | 342/615 [00:07<00:05, 50.38it/s]Loading weights:  57%|█████▋    | 349/615 [00:07<00:05, 52.29it/s]Loading weights: 100%|██████████| 615/615 [00:07<00:00, 80.68it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 152s (model load 60s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=206.62s p2=151.99s p3=10.3s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 71s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10633.80it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=70.95s p2=6.74s p3=9.9s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 425s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11818.10it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 70s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=424.63s p2=69.9s p3=10.08s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 311s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11415.50it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=310.69s p2=26.79s p3=10.98s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 281s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12346.86it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 38s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=281.5s p2=37.55s p3=11.05s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 229s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12316.27it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 41s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=229.45s p2=41.33s p3=10.82s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11471.58it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 41s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=203.68s p2=41.35s p3=9.98s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 203s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12421.72it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 52s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=202.79s p2=52.08s p3=10.77s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12455.11it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 72s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=205.58s p2=71.91s p3=11.3s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12053.75it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 60s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=204.49s p2=60.39s p3=12.3s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 15s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.16s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=15.02s p2=0.16s p3=10.85s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/AC/summary.csv
+===================== BC =====================
+Discovering input volumes ...
+Found 761 volumes for ['BC'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BC  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 207s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9941.23it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 49s (model load 9s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=207.24s p2=48.79s p3=9.33s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 154s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10667.90it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 37s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=153.57s p2=36.91s p3=11.63s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12284.13it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 40s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 13s
+      done: 10/10 | p1=204.13s p2=39.52s p3=12.93s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 11402.87it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 64s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=206.43s p2=64.2s p3=9.33s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 11531.16it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 101s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=204.26s p2=100.61s p3=9.79s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 71s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9879.75it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=70.78s p2=7.38s p3=9.89s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 422s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10358.12it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 76s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=422.0s p2=76.4s p3=10.08s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 322s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12183.85it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 32s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=322.41s p2=31.65s p3=10.91s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 301s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12300.35it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=300.69s p2=26.86s p3=10.32s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 279s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11312.92it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=279.08s p2=26.71s p3=10.77s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12331.20it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=203.69s p2=25.21s p3=9.14s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 203s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12778.46it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=203.1s p2=24.71s p3=10.4s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11442.07it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=206.21s p2=25.16s p3=9.44s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11958.30it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=204.4s p2=25.2s p3=9.09s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 15s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.07s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=14.91s p2=0.07s p3=8.73s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BC/summary.csv
+===================== BF =====================
+Discovering input volumes ...
+Found 733 volumes for ['BF'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BF  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 209s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11101.61it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 42s (model load 15s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=208.89s p2=41.62s p3=8.38s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 155s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10346.74it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 17s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=154.9s p2=16.67s p3=8.0s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12323.82it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 15s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=208.49s p2=15.15s p3=8.67s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10738.44it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 50s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=207.77s p2=50.29s p3=7.77s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 9754.12it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 93s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=208.02s p2=92.81s p3=7.85s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 71s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11774.23it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=71.04s p2=6.68s p3=8.16s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 429s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10757.76it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 72s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=428.72s p2=71.66s p3=8.33s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 280s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12174.80it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=280.29s p2=26.63s p3=8.9s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 263s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11297.18it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=263.45s p2=26.13s p3=8.86s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 242s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11973.51it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=242.41s p2=25.13s p3=8.0s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 209s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11225.24it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=209.21s p2=25.57s p3=7.87s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12906.12it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 31s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=207.69s p2=30.75s p3=9.97s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 209s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11694.72it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=208.55s p2=25.45s p3=8.64s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12182.17it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=208.02s p2=27.36s p3=8.11s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 15s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.09s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=14.99s p2=0.09s p3=9.34s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BF/summary.csv
+===================== BL =====================
+Discovering input volumes ...
+Found 773 volumes for ['BL'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BL  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10071.68it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 38s (model load 12s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=207.63s p2=37.77s p3=8.34s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 153s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10033.65it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=152.78s p2=18.12s p3=8.61s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 207s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11064.97it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 16s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=206.92s p2=16.24s p3=8.41s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 11119.01it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 52s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=206.03s p2=51.55s p3=8.25s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 207s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 10384.78it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 97s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=206.75s p2=97.44s p3=8.64s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 71s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9020.93it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=70.53s p2=7.21s p3=8.31s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 425s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11469.35it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 75s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=425.28s p2=75.25s p3=8.63s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 245s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11699.05it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 29s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=244.61s p2=28.75s p3=9.75s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 247s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11422.72it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=246.91s p2=26.12s p3=9.8s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 247s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12021.98it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=246.79s p2=26.13s p3=9.79s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12082.71it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=207.77s p2=25.11s p3=8.24s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12304.97it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=207.63s p2=25.49s p3=9.42s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12544.27it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 24s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=208.48s p2=24.44s p3=8.25s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 209s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12352.20it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=209.38s p2=25.01s p3=8.29s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 15s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.04s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=15.31s p2=0.04s p3=9.43s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BL/summary.csv
+===================== BP =====================
+Discovering input volumes ...
+Found 748 volumes for ['BP'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BP  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 185s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9947.26it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 32s (model load 9s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=184.63s p2=31.57s p3=10.45s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 137s
+   Pass 2/3: DINO tokens for 14 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9613.59it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 14s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=136.92s p2=14.35s p3=9.78s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 184s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11011.27it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 13s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=184.35s p2=12.98s p3=10.24s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 184s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10712.73it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 43s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=183.77s p2=43.36s p3=10.71s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 184s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 13593.97it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 83s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=184.29s p2=82.91s p3=10.97s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 64s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 18056.76it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 6s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=64.41s p2=5.8s p3=10.6s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 378s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11039.02it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 64s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=377.94s p2=64.14s p3=11.19s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 231s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10933.60it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 22s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=231.32s p2=22.4s p3=9.7s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 225s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11966.39it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 23s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=225.01s p2=22.84s p3=9.43s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 209s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11090.48it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 23s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=208.56s p2=22.74s p3=9.16s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 184s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11029.11it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 22s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=184.26s p2=22.37s p3=10.42s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 184s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12240.98it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 21s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=184.2s p2=21.21s p3=10.87s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 184s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11254.36it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 22s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=183.65s p2=22.49s p3=11.28s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 184s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 16619.37it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 22s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=183.72s p2=22.07s p3=12.02s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 15s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.06s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=15.01s p2=0.06s p3=10.16s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BP/summary.csv
+===================== CF =====================
+Discovering input volumes ...
+Found 756 volumes for ['CF'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/CF  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 197s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11014.29it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 31s (model load 7s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=197.19s p2=30.64s p3=8.86s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 147s
+   Pass 2/3: DINO tokens for 15 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10255.85it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 16s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=146.55s p2=15.75s p3=8.7s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 197s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11638.13it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 14s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=196.65s p2=14.26s p3=8.67s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 197s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10425.53it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 47s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=197.04s p2=47.06s p3=9.1s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 197s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 11194.13it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 89s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=197.47s p2=89.05s p3=8.43s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 68s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10321.04it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 6s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=67.91s p2=6.18s p3=8.41s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 404s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10291.99it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 66s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=403.98s p2=66.16s p3=9.12s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 261s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10880.90it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=261.08s p2=25.68s p3=8.59s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 245s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12137.39it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=245.35s p2=25.26s p3=7.58s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 227s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12092.62it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=226.76s p2=25.31s p3=7.81s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 194s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12415.80it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=194.41s p2=25.28s p3=8.67s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 193s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12861.85it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=193.41s p2=24.77s p3=8.84s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 194s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11906.98it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 24s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=193.73s p2=24.47s p3=7.9s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 193s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12125.09it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=193.38s p2=25.62s p3=8.76s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 15s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.04s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=14.93s p2=0.04s p3=10.47s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/CF/summary.csv
+===================== GH =====================
+Discovering input volumes ...
+Found 713 volumes for ['GH'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/GH  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 191s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10557.81it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 36s (model load 11s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=190.88s p2=35.65s p3=8.29s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 141s
+   Pass 2/3: DINO tokens for 15 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10037.86it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 16s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=141.32s p2=16.33s p3=7.77s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 189s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11802.34it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 16s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=189.28s p2=15.8s p3=8.32s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 192s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 11602.77it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 48s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=191.63s p2=48.32s p3=7.78s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 190s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 11310.56it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 94s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=189.98s p2=93.96s p3=7.93s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 66s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9280.80it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=65.91s p2=6.81s p3=7.92s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 392s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10966.93it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 70s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=391.54s p2=69.59s p3=8.43s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 242s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12352.03it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=241.73s p2=27.84s p3=7.52s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 224s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11408.73it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=224.23s p2=25.46s p3=7.86s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 194s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 14816.15it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=194.48s p2=26.19s p3=8.1s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 189s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12624.25it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=189.42s p2=24.8s p3=7.88s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 190s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12330.69it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=190.05s p2=25.96s p3=8.41s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 191s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12009.26it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=191.48s p2=25.88s p3=8.53s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 190s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12502.80it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=190.14s p2=26.02s p3=8.76s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 15s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.19s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=14.69s p2=0.19s p3=9.01s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/GH/summary.csv
+===================== MA =====================
+Discovering input volumes ...
+Found 758 volumes for ['MA'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/MA  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 193s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10768.50it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 32s (model load 7s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=192.66s p2=32.26s p3=8.77s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 142s
+   Pass 2/3: DINO tokens for 15 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11364.93it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=142.27s p2=17.63s p3=10.08s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 193s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11672.51it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 15s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=192.73s p2=15.44s p3=10.03s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 191s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 11362.52it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 49s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=191.03s p2=48.54s p3=8.97s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 191s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 11865.05it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 92s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=191.31s p2=92.35s p3=9.42s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 67s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9433.34it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=66.97s p2=7.08s p3=8.89s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 394s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9795.98it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 70s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=393.54s p2=69.95s p3=9.11s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 222s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11957.82it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=221.81s p2=26.91s p3=8.8s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 221s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11375.44it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 47s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=221.23s p2=47.16s p3=9.48s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 220s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12648.79it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 48s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=219.67s p2=48.45s p3=8.72s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 192s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11901.05it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 34s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=192.32s p2=33.79s p3=10.55s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 193s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12242.67it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 48s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 13s
+      done: 10/10 | p1=192.64s p2=47.53s p3=13.19s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 193s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12367.39it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 50s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 13s
+      done: 10/10 | p1=192.7s p2=50.23s p3=12.63s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 194s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10581.17it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 59s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=193.93s p2=58.98s p3=11.24s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 15s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.08s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 13s
+      done: 10/10 | p1=14.93s p2=0.08s p3=12.92s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/MA/summary.csv
+===================== ML =====================
+Discovering input volumes ...
+Found 737 volumes for ['ML'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/ML  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 203s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11180.85it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 79s (model load 11s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=202.5s p2=79.4s p3=12.41s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 151s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9934.87it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 33s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 15s
+      done: 10/10 | p1=150.71s p2=33.03s p3=15.25s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 202s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11376.61it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 21s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=202.45s p2=20.82s p3=12.27s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 203s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10957.60it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 86s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=202.6s p2=85.59s p3=11.49s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 202s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 11016.62it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 140s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=201.66s p2=140.14s p3=11.44s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 70s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9010.73it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 21s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=70.09s p2=20.69s p3=12.11s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 419s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11484.53it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 148s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 17s
+      done: 10/10 | p1=419.44s p2=148.4s p3=16.87s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 317s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10603.99it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 49s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=316.54s p2=49.44s p3=10.93s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 274s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10894.16it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 50s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=274.23s p2=50.43s p3=11.51s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 223s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12756.91it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 48s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=223.07s p2=48.33s p3=11.94s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 202s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11862.29it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 46s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=201.52s p2=46.07s p3=11.16s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12481.11it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 32s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=204.41s p2=32.43s p3=10.84s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 202s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12516.24it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 29s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=201.71s p2=28.59s p3=11.99s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 203s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12013.01it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=202.67s p2=27.21s p3=11.97s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 16s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.15s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=15.72s p2=0.15s p3=10.64s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/ML/summary.csv
+===================== PP =====================
+Discovering input volumes ...
+Found 765 volumes for ['PP'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/PP  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11124.78it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 42s (model load 14s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=205.5s p2=42.12s p3=11.62s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 152s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10935.89it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=152.03s p2=17.92s p3=10.54s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11913.87it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 16s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=205.79s p2=16.16s p3=10.21s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 10276.45it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 52s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=206.38s p2=52.49s p3=10.26s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 205s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 9948.92it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 96s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=204.86s p2=96.01s p3=10.83s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 70s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8133.05it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=70.03s p2=6.86s p3=9.84s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 421s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10236.52it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 74s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=420.58s p2=73.63s p3=10.31s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 257s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10255.85it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=257.17s p2=28.23s p3=9.91s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 250s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9486.22it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=249.75s p2=28.02s p3=10.06s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 226s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11029.39it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=226.36s p2=27.39s p3=10.87s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10536.95it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=204.15s p2=26.0s p3=10.2s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11480.96it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=203.56s p2=27.46s p3=11.41s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 205s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11943.29it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=204.62s p2=27.08s p3=9.65s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 205s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11712.68it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=205.04s p2=26.42s p3=10.39s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 15s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.07s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=14.75s p2=0.07s p3=9.31s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/PP/summary.csv
+===================== SL =====================
+Discovering input volumes ...
+Found 740 volumes for ['SL'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/SL  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 201s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10977.67it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 45s (model load 13s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=200.52s p2=44.74s p3=9.94s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 147s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10833.75it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 19s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=147.46s p2=19.21s p3=9.03s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 199s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10856.74it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 18s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=199.02s p2=18.42s p3=9.36s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 200s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 12222.62it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 56s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=199.73s p2=56.21s p3=9.37s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 200s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 11571.19it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 102s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=200.43s p2=101.52s p3=9.22s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 69s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9430.32it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 10s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=69.24s p2=9.7s p3=9.64s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 413s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9584.64it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 74s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=412.62s p2=73.56s p3=8.68s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 224s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10214.19it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 28s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=223.76s p2=28.38s p3=8.58s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 201s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11759.21it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=200.61s p2=26.84s p3=9.1s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 195s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11358.36it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 27s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=194.7s p2=27.25s p3=8.95s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 199s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10375.73it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=199.42s p2=26.27s p3=8.73s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 199s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10900.74it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=198.89s p2=26.48s p3=9.18s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 199s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11403.29it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=198.76s p2=25.82s p3=10.95s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 200s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12051.78it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=199.79s p2=25.64s p3=10.95s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 14s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.31s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=14.46s p2=0.31s p3=9.73s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/SL/summary.csv
+===================== WO =====================
+Discovering input volumes ...
+Found 946 volumes for ['WO'] | workers=8 | methods=['dino', 'pca']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/WO  (TIMING ONLY, no QA render)
+
+DINO: 14 configs
+
+[dino 1/14] baseline ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 203s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11061.37it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 33s (model load 7s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=202.65s p2=32.65s p3=8.1s
+[dino 2/14] views=4 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 151s
+   Pass 2/3: DINO tokens for 16 volumes x 4 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9445.72it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 17s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=150.58s p2=17.11s p3=9.56s
+[dino 3/14] model=small ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 201s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=small)
+Loading DINO model=facebook/dinov3-vits16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11226.10it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 15s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=201.5s p2=15.01s p3=8.19s
+[dino 4/14] model=large ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 202s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=large)
+Loading DINO model=facebook/dinov3-vitl16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/415 [00:00<?, ?it/s]Loading weights: 100%|██████████| 415/415 [00:00<00:00, 11121.57it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 51s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=201.62s p2=50.96s p3=7.54s
+[dino 5/14] model=huge ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 201s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=huge)
+Loading DINO model=facebook/dinov3-vith16plus-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights: 100%|██████████| 615/615 [00:00<00:00, 11241.11it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 97s (model load 1s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 7s
+      done: 10/10 | p1=201.34s p2=97.24s p3=7.42s
+[dino 6/14] grid=30 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 70s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 9635.88it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 7s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=69.69s p2=6.91s p3=7.79s
+[dino 7/14] grid=90 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 418s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10573.83it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 69s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=417.68s p2=68.52s p3=8.38s
+[dino 8/14] threshold=96 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 265s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11879.97it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 26s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=265.45s p2=25.99s p3=7.87s
+[dino 9/14] threshold=97 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 255s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11599.38it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=254.63s p2=25.48s p3=7.76s
+[dino 10/14] threshold=98 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 236s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11804.85it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=235.59s p2=24.9s p3=7.99s
+[dino 11/14] top_k=3 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 203s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 10777.55it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=202.5s p2=24.94s p3=8.29s
+[dino 12/14] top_k=8 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 201s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 13002.63it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=201.38s p2=25.0s p3=8.77s
+[dino 13/14] anno_mode=1_image ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 202s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 16636.87it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=202.12s p2=25.02s p3=8.87s
+[dino 14/14] anno_mode=1_animal ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 203s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12651.33it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 25s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 8s
+      done: 10/10 | p1=202.55s p2=25.03s p3=8.16s
+
+[pca] pca_seg ...
+   Pass 1/3: segment 10 volumes on 8 workers
+   Pass 1 done in 15s
+   Pass 2/3: PCA principal axis for 10 volumes
+   Pass 2 done in 0.09s
+   Pass 3/3: rotate 10 volumes on 8 workers (no QA render)
+   Pass 3 done in 7s
+      done: 10/10 | p1=14.65s p2=0.09s p3=7.45s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/WO/summary.csv
+All species done.
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28881380: <insect_timing5> in cluster <dcc> Done
+
+Job <insect_timing5> was submitted from host <n-62-11-22> by user <s246136> in cluster <dcc> at Tue Jul  7 06:05:02 2026
+Job was executed on host(s) <8*n-62-11-15>, in queue <gpuv100>, as user <s246136> in cluster <dcc> at Tue Jul  7 06:26:38 2026
+</zhome/1c/0/216847> was used as the home directory.
+</zhome/1c/0/216847/Desktop/fagprojekt> was used as the working directory.
+Started at Tue Jul  7 06:26:38 2026
+Terminated at Tue Jul  7 18:47:39 2026
+Results reported at Tue Jul  7 18:47:39 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+# DTU HPC (LSF / bsub) submit script for HPC round 5: pipeline TIMING ONLY, with the
+# QA re-render removed. Runs BOTH the DINO sweep and PCA (via
+# HPC_round_5/run_timing_noqa.py) for every species in SPECIES_LIST, writing to
+# <RESULTS>/<SPECIES>/. Submit from the repo root:
+#
+#     cd $PROJ && mkdir -p HPC_round_5/logs
+#     bsub < HPC_round_5/run_timing_noqa_lsf.sh
+#
+# Same node/queue setup as the DINO rounds (gpuv100 + a GPU): the GPU is REQUIRED for
+# DINO's Pass 2 (patch tokens), and running on the same node type keeps the timings
+# comparable to the earlier rounds. xvfb IS still needed -- DINO's Pass 1 renders the
+# 6 views the tokens are extracted from (that render is part of the method and is
+# kept; only the optional Pass 3 QA re-render is removed). PCA uses neither GPU nor
+# rendering, but shares the job so its Pass 3 is timed on the same node.
+#
+# Env-var overrides (all optional):
+#   SPECIES_LIST  species to run            (default: all 12)
+#   RESULTS_NAME  output dir under $PROJ    (default: HPC_round_5/experiments)
+#   METHODS       "dino pca" | "dino" | "pca"  (default: dino pca)
+
+#BSUB -J insect_timing5
+#BSUB -q gpuv100             # SAME queue/node type as the DINO rounds (comparable timings)
+#BSUB -gpu "num=1:mode=exclusive_process"   # REQUIRED for DINO Pass 2 tokens
+#BSUB -n 8                    # CPU cores -> ProcessPool workers (passes 1 & 3)
+#BSUB -R "rusage[mem=4GB]"    # PER CORE on DTU LSF -> 8 x 4 = 32 GB total
+#BSUB -R "span[hosts=1]"
+#BSUB -W 24:00               # walltime hh:mm (Pass 1 render still dominates the DINO sweep)
+# Logs + results both live under the HPC_round_5/ subfolder. HPC_round_5/logs/ must
+# exist at submit time (mkdir -p HPC_round_5/logs before bsub).
+#BSUB -o HPC_round_5/logs/timing5_%J.out
+#BSUB -e HPC_round_5/logs/timing5_%J.err
+
+set -euo pipefail
+PROJ=/zhome/1c/0/216847/Desktop/fagprojekt   # repo location on the cluster
+cd "$PROJ"
+mkdir -p HPC_round_5/logs
+
+# --- environment ----------------------------------------------------------
+source "$PROJ/venv/bin/activate"
+export HF_HOME="$PROJ/hf_cache"     # DINO weights cache (needed for Pass 2)
+export HF_HUB_OFFLINE=1
+
+# --- run ------------------------------------------------------------------
+DATA=/dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512
+SPECIES_LIST="${SPECIES_LIST:-AC BC BF BL BP CF GH MA ML PP SL WO}"
+RESULTS_NAME="${RESULTS_NAME:-HPC_round_5/experiments}"
+METHODS="${METHODS:-dino pca}"
+
+for sp in $SPECIES_LIST; do
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   299628.00 sec.
+    Max Memory :                                 4740 MB
+    Average Memory :                             3287.51 MB
+    Total Requested Memory :                     32768.00 MB
+    Delta Memory :                               28028.00 MB
+    Max Swap :                                   -
+    Max Processes :                              15
+    Max Threads :                                159
+    Run time :                                   44461 sec.
+    Turnaround time :                            45757 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <HPC_round_5/logs/timing5_28881380.err> for stderr output of this job.
+

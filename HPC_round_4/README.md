@@ -49,11 +49,13 @@ SPECIES_LIST="GH MA" bsub < HPC_round_4/run_pca_test_lsf.sh
 tail -f HPC_round_4/logs/pca4_*.out         # live log once it is RUNning
 ```
 
-No GPU is required, but **`xvfb` still is** — the QA re-render uses VTK offscreen
-rendering, so everything runs under `xvfb-run -a` (the submit script handles this).
-The submit script defaults to the CPU queue `hpc`; if that queue isn't available to
-you, switch `#BSUB -q` to a GPU queue that works (e.g. `gpuv100`) — the GPU just
-sits idle.
+PCA itself uses no GPU, but the submit script requests the **`gpuv100` queue + a
+GPU** on purpose: it pins the job to the same node type as the DINO rounds so
+Pass 1/3 (CPU-bound segment + software VTK render) are timed on the same hardware
+and are directly comparable to the DINO `summary.csv` (an earlier run on the `hpc`
+CPU queue showed a ~14% Pass 3 node confound). The GPU just sits idle. **`xvfb` is
+still required** — the QA re-render uses VTK offscreen rendering, so everything runs
+under `xvfb-run -a` (the submit script handles this).
 
 ## Output (per species, mirrors the DINO rounds)
 
