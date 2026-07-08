@@ -1,0 +1,503 @@
+===================== AC =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/AC --animals AC --eval-range 11 20
+
+Discovering input volumes ...
+Found 724 volumes for ['AC'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/AC  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 204s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights:   9%|▉         | 20/211 [00:00<00:01, 166.70it/s]Loading weights:  18%|█▊        | 37/211 [00:00<00:01, 128.31it/s]Loading weights:  24%|██▍       | 51/211 [00:00<00:01, 113.61it/s]Loading weights:  31%|███▏      | 66/211 [00:00<00:01, 120.04it/s]Loading weights:  37%|███▋      | 79/211 [00:00<00:01, 98.13it/s] Loading weights:  44%|████▎     | 92/211 [00:00<00:01, 103.83it/s]Loading weights:  49%|████▉     | 103/211 [00:01<00:01, 82.68it/s]Loading weights:  57%|█████▋    | 120/211 [00:01<00:00, 102.19it/s]Loading weights: 100%|██████████| 211/211 [00:01<00:00, 177.66it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 153s (model load 108s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=203.9s p2=152.88s p3=12.3s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 198s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 6752.31it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 39s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 14s
+      done: 10/10 | p1=197.86s p2=38.53s p3=13.55s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/AC/summary.csv
+===================== BC =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BC --animals BC --eval-range 11 20
+
+Discovering input volumes ...
+Found 761 volumes for ['BC'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BC  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 226s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7588.15it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 49s (model load 10s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 13s
+      done: 10/10 | p1=225.56s p2=48.77s p3=13.3s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 201s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7671.55it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 38s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=200.8s p2=38.31s p3=11.74s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BC/summary.csv
+===================== BF =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BF --animals BF --eval-range 11 20
+
+Discovering input volumes ...
+Found 733 volumes for ['BF'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BF  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 219s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7750.97it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 50s (model load 11s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 9s
+      done: 10/10 | p1=219.38s p2=49.73s p3=8.87s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 206s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 6962.46it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 39s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=206.41s p2=38.8s p3=10.65s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BF/summary.csv
+===================== BL =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BL --animals BL --eval-range 11 20
+
+Discovering input volumes ...
+Found 773 volumes for ['BL'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BL  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 227s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8292.09it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 46s (model load 8s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=226.66s p2=46.09s p3=10.89s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 205s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8004.47it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 38s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=204.51s p2=38.41s p3=10.01s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BL/summary.csv
+===================== BP =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BP --animals BP --eval-range 11 20
+
+Discovering input volumes ...
+Found 748 volumes for ['BP'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BP  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 191s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7539.73it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 42s (model load 8s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=190.99s p2=41.85s p3=11.56s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 14 volumes (10 eval + 4 annotated) on 8 workers
+   Pass 1 done in 180s
+   Pass 2/3: DINO tokens for 14 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7807.18it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 34s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=179.89s p2=33.95s p3=12.33s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/BP/summary.csv
+===================== CF =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/CF --animals CF --eval-range 11 20
+
+Discovering input volumes ...
+Found 756 volumes for ['CF'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/CF  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 209s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7562.15it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 45s (model load 8s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=208.77s p2=44.8s p3=12.13s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 195s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7102.31it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 36s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=195.02s p2=36.24s p3=10.61s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/CF/summary.csv
+===================== GH =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/GH --animals GH --eval-range 11 20
+
+Discovering input volumes ...
+Found 713 volumes for ['GH'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/GH  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 186s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8064.65it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 46s (model load 9s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=186.19s p2=45.72s p3=11.42s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 184s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7401.26it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 37s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=184.31s p2=36.83s p3=11.77s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/GH/summary.csv
+===================== MA =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/MA --animals MA --eval-range 11 20
+
+Discovering input volumes ...
+Found 758 volumes for ['MA'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/MA  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 192s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 12458.09it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 49s (model load 13s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 12s
+      done: 10/10 | p1=192.18s p2=49.15s p3=11.55s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 15 volumes (10 eval + 5 annotated) on 8 workers
+   Pass 1 done in 189s
+   Pass 2/3: DINO tokens for 15 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7414.22it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 37s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=189.39s p2=36.84s p3=11.34s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/MA/summary.csv
+===================== ML =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/ML --animals ML --eval-range 11 20
+
+Discovering input volumes ...
+Found 737 volumes for ['ML'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/ML  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 201s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8947.87it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 47s (model load 8s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 13s
+      done: 10/10 | p1=200.71s p2=47.14s p3=12.61s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 199s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8395.37it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 39s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 14s
+      done: 10/10 | p1=199.1s p2=38.53s p3=13.85s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/ML/summary.csv
+===================== PP =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/PP --animals PP --eval-range 11 20
+
+Discovering input volumes ...
+Found 765 volumes for ['PP'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/PP  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 208s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8105.34it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 46s (model load 8s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 14s
+      done: 10/10 | p1=207.73s p2=46.4s p3=13.64s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 203s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 7758.38it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 38s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 14s
+      done: 10/10 | p1=202.86s p2=38.17s p3=14.23s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/PP/summary.csv
+===================== SL =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/SL --animals SL --eval-range 11 20
+
+Discovering input volumes ...
+Found 740 volumes for ['SL'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/SL  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 195s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8532.32it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 46s (model load 7s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=195.24s p2=46.25s p3=10.44s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 195s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 6911.83it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 39s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=194.89s p2=39.41s p3=10.0s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/SL/summary.csv
+===================== WO =====================
+[HPC_round_5/thresholds] render-free timing -> configs ['threshold=99', 'threshold=99.5']
+[HPC_round_5/thresholds] forwarding: --methods dino --mode ofat --only threshold=99 threshold=99.5 --original /dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512 --results /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/WO --animals WO --eval-range 11 20
+
+Discovering input volumes ...
+Found 946 volumes for ['WO'] | workers=8 | methods=['dino']
+Results -> /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/WO  (TIMING ONLY, no QA render)
+
+DINO: 2 configs
+
+[dino 1/2] threshold=99 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 209s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 33092.70it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 46s (model load 8s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 10s
+      done: 10/10 | p1=208.71s p2=46.35s p3=10.16s
+[dino 2/2] threshold=99.5 ...
+   Pass 1/3: segment + render 16 volumes (10 eval + 6 annotated) on 8 workers
+   Pass 1 done in 200s
+   Pass 2/3: DINO tokens for 16 volumes x 6 views (model=base)
+Loading DINO model=facebook/dinov3-vitb16-pretrain-lvd1689m | device=cuda
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8023.70it/s]
+Model loaded | num_prefix_tokens=5
+   Pass 2 done in 37s (model load 0s)
+   Pass 3/3: triangulate + rotate 10 individuals on 8 workers (no QA render)
+   Pass 3 done in 11s
+      done: 10/10 | p1=199.71s p2=37.06s p3=11.31s
+
+Summary (timings, no QA render) written to /zhome/1c/0/216847/Desktop/fagprojekt/HPC_round_5/experiments/WO/summary.csv
+All species done.
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28887607: <insect_thr5> in cluster <dcc> Done
+
+Job <insect_thr5> was submitted from host <n-62-11-22> by user <s246136> in cluster <dcc> at Wed Jul  8 11:13:20 2026
+Job was executed on host(s) <8*n-62-20-11>, in queue <gpuv100>, as user <s246136> in cluster <dcc> at Wed Jul  8 11:16:08 2026
+</zhome/1c/0/216847> was used as the home directory.
+</zhome/1c/0/216847/Desktop/fagprojekt> was used as the working directory.
+Started at Wed Jul  8 11:16:08 2026
+Terminated at Wed Jul  8 13:02:18 2026
+Results reported at Wed Jul  8 13:02:18 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+# DTU HPC (LSF / bsub) submit script for HPC round 5: render-free TIMING of the two
+# extra percentile thresholds 99 and 99.5 only. Submit from the repo root:
+#
+#     cd $PROJ && mkdir -p HPC_round_5/logs
+#     bsub < HPC_round_5/run_timing_noqa_thresholds_lsf.sh
+#
+# Runs threshold=99 and threshold=99.5 (DINO only) via
+# HPC_round_5/run_timing_noqa_thresholds.py, appending the rows to the round-5
+# summary.csv per species (same format, QA re-render removed). Same node/queue setup
+# as the rest of round 5: gpuv100 + a GPU (required for DINO Pass 2 tokens) and
+# xvfb-run (DINO's Pass 1 render still runs). Only 2 configs/species, so it is quick.
+#
+# Env-var overrides (all optional):
+#   SPECIES_LIST  species to run            (default: all 12)
+#   RESULTS_NAME  output dir under $PROJ    (default: HPC_round_5/experiments)
+
+#BSUB -J insect_thr5
+#BSUB -q gpuv100
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -n 8
+#BSUB -R "rusage[mem=4GB]"
+#BSUB -R "span[hosts=1]"
+#BSUB -W 6:00                 # 2 configs/species -> quick
+#BSUB -o HPC_round_5/logs/thr5_%J.out
+#BSUB -e HPC_round_5/logs/thr5_%J.err
+
+set -euo pipefail
+PROJ=/zhome/1c/0/216847/Desktop/fagprojekt
+cd "$PROJ"
+mkdir -p HPC_round_5/logs
+
+# --- environment ----------------------------------------------------------
+source "$PROJ/venv/bin/activate"
+export HF_HOME="$PROJ/hf_cache"     # DINO weights cache (needed for Pass 2)
+export HF_HUB_OFFLINE=1
+
+# --- run ------------------------------------------------------------------
+DATA=/dtu/3d-imaging-center/projects/2022_QIM_55_BugNIST/analysis/BugNIST3D/bugnist_512
+SPECIES_LIST="${SPECIES_LIST:-AC BC BF BL BP CF GH MA ML PP SL WO}"
+RESULTS_NAME="${RESULTS_NAME:-HPC_round_5/experiments}"
+
+for sp in $SPECIES_LIST; do
+    echo "===================== $sp ====================="
+    # '|| ...' so one bad species does not abort the whole job (set -e).
+    xvfb-run -a python HPC_round_5/run_timing_noqa_thresholds.py \
+        --original "$DATA" \
+        --results  "$PROJ/$RESULTS_NAME/$sp" \
+        --animals  "$sp" \
+        --eval-range 11 20 \
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   40287.00 sec.
+    Max Memory :                                 3899 MB
+    Average Memory :                             2469.00 MB
+    Total Requested Memory :                     32768.00 MB
+    Delta Memory :                               28869.00 MB
+    Max Swap :                                   -
+    Max Processes :                              15
+    Max Threads :                                159
+    Run time :                                   6370 sec.
+    Turnaround time :                            6538 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <HPC_round_5/logs/thr5_28887607.err> for stderr output of this job.
+
